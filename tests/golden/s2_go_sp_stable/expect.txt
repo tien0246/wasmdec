@@ -1,0 +1,8 @@
+# S2: two back-to-back Go calls keep cached SP stable with no stray global-0
+# writes around the calls.
+contains: wasm_func_3
+contains: return 5;
+not_contains: wasm_global_0
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

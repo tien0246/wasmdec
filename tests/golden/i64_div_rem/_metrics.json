@@ -1,0 +1,48 @@
+{
+ "fixture": "i64_div_rem.wasm",
+ "wall_ms": 463,
+ "timeout": false,
+ "functions": {
+  "div_s": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "div_u": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "rem_s": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "rem_u": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 4,
+  "ok": 4,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

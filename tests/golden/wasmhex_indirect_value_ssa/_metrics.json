@@ -1,0 +1,136 @@
+{
+ "fixture": "wasmhex_indirect_value_ssa.wasm",
+ "wall_ms": 458,
+ "timeout": false,
+ "functions": {
+  "target0": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "target1": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "target2": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "target3": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "local_alias_chain": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "join_same_value": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "join_ambiguous": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "index_shift_add": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "index_div_u": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "index_div_s": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "index_ctz": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "index_clz": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "index_popcnt": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "index_div_zero": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "dynamic_index": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 15,
+  "ok": 15,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

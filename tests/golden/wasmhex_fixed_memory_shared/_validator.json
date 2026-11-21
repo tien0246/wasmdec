@@ -1,0 +1,4 @@
+{
+ "valid": false,
+ "reason": "000001a: error: memory may not be shared: threads not allowed"
+}

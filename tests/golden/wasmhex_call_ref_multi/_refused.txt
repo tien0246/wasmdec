@@ -1,0 +1,7 @@
+# T0-era refused-marker: functions below currently FAIL F5; their .c files are intentionally absent (no stale copies).
+# dumped: 2026-11-20T23:58:48
+call_ref_pair_i64	INTERR	code=-1 errea=0x1063
+call_ref_pair_join	INTERR	code=-1 errea=0x106a
+call_ref_six_join	INTERR	code=-1 errea=0x1094
+return_call_ref_pair_join	INTERR	code=-1 errea=0x107f
+return_call_ref_six_join	INTERR	code=-1 errea=0x10a9

@@ -1,0 +1,17 @@
+# G12 "map" (todo §5 G12 / §3.10): sourced Go fixture —
+# tests/go/map/main.go (go1.27.4). Pseudocode kỳ vọng + PASS/FAIL:
+# expected_notes.md.
+# Pins cấu trúc: đúng cặp runtime map cho khóa string — mapaccess1_faststr
+# (đọc m[k]) và mapassign_faststr (ghi m[k]=), mỗi lần gọi đẩy type word
+# map + {ptr,len} khóa qua cửa sổ stack; nil check mapassign hiện
+# runtime.sigpanic (dạng hiển thị hiện tại — D5 default chưa ẩn); giá trị
+# đọc/ghi qua con trỏ kết quả của runtime.
+contains: __usercall main.bump@<r0>(int a1@<r0>)
+contains: runtime.mapaccess1_faststr
+contains: runtime.mapassign_faststr
+contains: runtime.sigpanic
+not_contains: runtime.morestack
+not_contains: switch (a1)
+not_contains: JUMPOUT(
+not_contains: INTERR
+status: OK

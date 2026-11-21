@@ -1,0 +1,112 @@
+{
+ "fixture": "differential_o0.wasm",
+ "wall_ms": 442,
+ "timeout": false,
+ "functions": {
+  "struct_fields": {
+   "status": "OK",
+   "ms": 6,
+   "lines": 22,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "array_sum": {
+   "status": "OK",
+   "ms": 4,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "nested_if": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 27,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "switch_dispatch": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 25,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "call_two_levels": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 13,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_func_6": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "pointer_arith": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 13,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "float_ops": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 29,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "factorial": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 25,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "string_len": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "loop_bound": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "__wasm_call_ctors": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 12,
+  "ok": 12,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

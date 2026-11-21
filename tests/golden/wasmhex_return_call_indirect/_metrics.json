@@ -1,0 +1,96 @@
+{
+ "fixture": "wasmhex_return_call_indirect.wasm",
+ "wall_ms": 381,
+ "timeout": false,
+ "functions": {
+  "increment": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wrong_type": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "increment_i64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "discard": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "tail_valid": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "tail_type_trap": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "tail_null_trap": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "tail_bounds_trap": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "tail_i64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "tail_void": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 10,
+  "ok": 10,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

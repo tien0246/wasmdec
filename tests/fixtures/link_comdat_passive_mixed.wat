@@ -1,0 +1,10 @@
+(module
+  (import "env" "mem" (memory 1))
+  (data "BBBBB")
+  (data "U")
+  (func (export "install")
+    (i32.const 10)
+    (i32.const 0)
+    (i32.const 1)
+    (memory.init 1))
+)

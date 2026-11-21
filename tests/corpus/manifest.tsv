@@ -1,0 +1,17 @@
+# V2 (todo 10): the official corpus manifest - one line per corpus, TAB-separated.
+# Columns: name <TAB> path <TAB> sha256 <TAB> bytes <TAB> toolchain <TAB> role <TAB> source
+# - `path` is relative to the repository root; the whole wasm-test/ tree is
+#   git-ignored (duckdb alone is 37 MB), so presence + integrity are enforced
+#   by tests/corpus/check_corpus.cmake (ctest entry `corpus-check`): a missing
+#   or corrupted corpus FAILS the check - that is the point of V2.
+# - Keep this file ASCII-only and one physical line per corpus: CMake
+#   file(STRINGS) mis-splits lines containing multi-byte UTF-8. Narrative
+#   documentation (rebuild recipes, why each corpus exists) lives in
+#   tests/CORPUS.md; this file stays machine-readable.
+# name	path	sha256	bytes	toolchain	role	source
+duckdb	wasm-test/wasm-test/duckdb.wasm	09c6ecb8b2fb76ad37fdcdcd25dc2fcb2410fec587c11b1b5fb7946c71804365	37374039	Emscripten (DuckDB WASM shell build)	crosscheck-f5	large C++ corpus provided by Root (12/11 baseline); upstream = DuckDB WASM shell (duckdb-web), exact build pinned here by SHA-256
+main126	wasm-test/wasm-test/main.wasm	a39d9bc15609bf40ecc0def4f904e64686d1a7ba705306c59e6e173658a9a96e	5836781	Go go1.26.5 GOOS=js GOARCH=wasm (name section stripped)	crosscheck-f5	Go binary provided by Root; stripped variant of the gowasm126 source layout
+gowasm-balls	wasm-test/gowasm-balls/main.wasm	c59cf3b5a5a992dc5ede4d28f23d6b93cbc7e2f9b9ff3c191f2903fe5fdfb20c	2694653	Go go1.27.3 GOOS=js GOARCH=wasm (named, Homebrew darwin/arm64)	corpus-go	github.com/eveperc/go-wasm-example; source main.go in wasm-test/gowasm-balls/ + rebuild recipe in BASELINE.md
+gowasm-ballclone	wasm-test/gowasm-ballclone/main.wasm	727f9de5950030752e83d55e677b964914a49835377fb01bfe0ecab24dc196d9	2487148	Go go1.27.3 GO111MODULE=off GOOS=js GOARCH=wasm (Homebrew darwin/arm64)	fixture-m0b	source main.go in wasm-test/gowasm-ballclone/ + rebuild recipe in README.md
+gowasm126	wasm-test/gowasm126/main.wasm	e31d7c7c0f6f0fa1f376329a5f3e6cc9faaf229e7848dfd19d3045035069aa3e	2669150	Go go1.26.5 GOTOOLCHAIN=go1.26.5 GOOS=js GOARCH=wasm	fixture-g7s1	source main.go + go.mod in wasm-test/gowasm126/ (G7-S1 rebuild fixture)
+musl-00050c6a	wasm-test/00050c6a.wasm	e7c14f96f036d782d6c4441c5aad92890c283f08397c4fffadde73605b74b95b	82714	Emscripten (musl printf/MD5/soft-float128, named)	crosscheck-f5-emscripten	CTF challenge module dropped by user 17/11; triggered the T0 rev40 entry-global.get refusal class (43/102 refused pre-fix, 0 post-fix); F5-subset pin b5a7fbeb…

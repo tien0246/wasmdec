@@ -1,0 +1,13 @@
+(module
+  (func (export "f32_trunc_sat_s") (param f32) (result i32)
+    local.get 0 f32x4.splat i32x4.trunc_sat_f32x4_s i32x4.extract_lane 0)
+  (func (export "f32_trunc_sat_u") (param f32) (result i32)
+    local.get 0 f32x4.splat i32x4.trunc_sat_f32x4_u i32x4.extract_lane 0)
+  (func (export "f64_trunc_sat_s") (param f64) (result i32)
+    local.get 0 f64x2.splat i32x4.trunc_sat_f64x2_s_zero i32x4.extract_lane 1)
+  (func (export "f64_trunc_sat_u") (param f64) (result i32)
+    local.get 0 f64x2.splat i32x4.trunc_sat_f64x2_u_zero i32x4.extract_lane 1)
+  (func (export "f64_zero_s") (param f64) (result i32)
+    local.get 0 f64x2.splat i32x4.trunc_sat_f64x2_s_zero i32x4.extract_lane 2)
+  (func (export "f64_zero_u") (param f64) (result i32)
+    local.get 0 f64x2.splat i32x4.trunc_sat_f64x2_u_zero i32x4.extract_lane 2))

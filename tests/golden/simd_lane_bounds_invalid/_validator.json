@@ -1,0 +1,4 @@
+{
+ "valid": false,
+ "reason": "00004e0: error: unexpected opcode: 0xfd 0x9a 0x1"
+}

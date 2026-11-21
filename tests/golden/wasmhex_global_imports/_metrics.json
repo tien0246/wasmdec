@@ -1,0 +1,88 @@
+{
+ "fixture": "wasmhex_global_imports.wasm",
+ "wall_ms": 397,
+ "timeout": false,
+ "functions": {
+  "read_readonly": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "get_counter32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "set_counter32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "get_counter64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "set_counter64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "get_ratio32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "set_ratio32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "get_scale64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "set_scale64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 9,
+  "ok": 9,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

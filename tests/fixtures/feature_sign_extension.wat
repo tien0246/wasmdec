@@ -1,0 +1,11 @@
+(module
+  (func (export "i32_extend8") (param i32) (result i32)
+    local.get 0 i32.extend8_s)
+  (func (export "i32_extend16") (param i32) (result i32)
+    local.get 0 i32.extend16_s)
+  (func (export "i64_extend8") (param i64) (result i64)
+    local.get 0 i64.extend8_s)
+  (func (export "i64_extend16") (param i64) (result i64)
+    local.get 0 i64.extend16_s)
+  (func (export "i64_extend32") (param i64) (result i64)
+    local.get 0 i64.extend32_s))

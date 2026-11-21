@@ -1,0 +1,40 @@
+{
+ "fixture": "link_comdat_global_mixed.wasm",
+ "wall_ms": 397,
+ "timeout": false,
+ "functions": {
+  "read_same": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "write_same": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "read_helper": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 3,
+  "ok": 3,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

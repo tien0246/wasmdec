@@ -1,0 +1,20 @@
+# C string args — corpus #6 pin (musl-00050c6a, wasm-test/00050c6a.wasm in
+# tests/corpus/manifest.tsv). The three committed .c files are the fresh
+# dump with the P0-1 proof extension live; these expectations pin the exact
+# literals read from the module's real data bytes (data segments
+# [0x400,0xBBC): "%2hhx" at 0x544, "Good job! Your flag is: %s" at 0x54A,
+# the MD5 target hash at 0xA90) and the BSS &item forms (0xBC4/0xC60).
+# Refresh the .c files via:
+#   wasmdec_runner dump-golden wasm-test/00050c6a.wasm --out-root <dir>
+contains: sscanf(v3, "%2hhx", v2)
+contains: snprintf(v1 + 16, 100, "Good job! Your flag is: %s", v1)
+contains: MD5_Init(&unk_BC4)
+contains: MD5_Update(&unk_BC4
+contains: MD5_Final(&unk_C60, &unk_BC4)
+contains: hex_to_bytes("936fff76f378ace4cf83a4360cafcc20", v1)
+contains: strcmp(&unk_C60, v1)
+not_contains: sscanf(v3, 1348
+not_contains: snprintf(v1 + 16, 100, 1354
+not_contains: MD5_Init(3012)
+not_contains: hex_to_bytes(2704
+status: OK

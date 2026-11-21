@@ -1,0 +1,56 @@
+{
+ "fixture": "m1d1_wide_db_constructs.wasm",
+ "wall_ms": 392,
+ "timeout": false,
+ "functions": {
+  "f_block": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f_local": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f_global": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f_param": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f_const": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 5,
+  "ok": 5,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

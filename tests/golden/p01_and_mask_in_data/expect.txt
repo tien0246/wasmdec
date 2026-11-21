@@ -1,0 +1,8 @@
+# P0-1: constants in value positions stay numbers — the mask 0xFFFF must
+# not become a memory read of the data segment (old bug: `& word_…FFFF`).
+contains: (unsigned __int16)
+not_contains: word_
+not_contains: unk_1000
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

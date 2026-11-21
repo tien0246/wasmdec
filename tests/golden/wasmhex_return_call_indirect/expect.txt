@@ -1,0 +1,9 @@
+# Static return_call_indirect lowering (verify_wasmhex_return_call_indirect.py).
+contains: return increment(a1);
+contains: return increment_i64(a1);
+contains: discard(a1);
+contains: wasm_trap_call_indirect_type_table0_type0(
+contains: wasm_trap_call_indirect_null_table0_type0(
+contains: wasm_trap_call_indirect_bounds_table0_type0(
+not_contains: JUMPOUT(
+status: OK

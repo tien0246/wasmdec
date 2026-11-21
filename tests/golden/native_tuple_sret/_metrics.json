@@ -1,0 +1,64 @@
+{
+ "fixture": "native_tuple_sret.wasm",
+ "wall_ms": 374,
+ "timeout": false,
+ "functions": {
+  "make_pair64": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "forward_pair64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 15,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "sum_pair64": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "make_triple64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 7,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "forward_triple64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "sum_triple64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 19,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 6,
+  "ok": 6,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

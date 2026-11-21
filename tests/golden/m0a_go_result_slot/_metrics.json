@@ -1,0 +1,32 @@
+{
+ "fixture": "m0a_go_result_slot.wasm",
+ "wall_ms": 380,
+ "timeout": false,
+ "functions": {
+  "wasm_func_1": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "go_result_caller": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 2,
+  "ok": 2,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

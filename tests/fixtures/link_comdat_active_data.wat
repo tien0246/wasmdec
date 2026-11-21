@@ -1,0 +1,4 @@
+(module
+  (memory (export "m") 1)
+  (data (i32.const 0) "g")
+)

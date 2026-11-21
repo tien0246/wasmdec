@@ -1,0 +1,10 @@
+(module
+  (type $vector_to_vector (func (param v128) (result v128)))
+  (func $identity_v128 (export "identity_v128") (type $vector_to_vector)
+    local.get 0)
+  (func $forward_v128 (export "forward_v128") (type $vector_to_vector)
+    local.get 0 call $identity_v128)
+  (func $make_v128 (export "make_v128") (param i64) (result v128)
+    local.get 0 i64x2.splat)
+  (func $extract_forward (export "extract_forward") (param i64) (result i64)
+    local.get 0 call $make_v128 i64x2.extract_lane 1))

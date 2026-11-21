@@ -1,0 +1,13 @@
+# Float unary raw bits lowering to libm calls (verify_wasmhex_float_unary_raw.py).
+contains: ceilf(
+contains: floorf(
+contains: sqrtf(
+contains: truncf(
+contains: ceil(
+contains: floor(
+contains: sqrt(
+contains: trunc(
+not_contains: wasm_f32_
+not_contains: wasm_f64_
+not_contains: JUMPOUT(
+status: OK

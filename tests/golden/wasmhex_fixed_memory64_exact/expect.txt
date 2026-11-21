@@ -1,0 +1,7 @@
+# Fixed Memory64 exact-max lowering (verify_wasmhex_fixed_memory64_exact.py).
+contains: return *(_DWORD *)a1;
+contains: *(_DWORD *)a1 = a2;
+not_contains: __builtin_trap
+not_contains: wasm_memory64_
+not_contains: JUMPOUT(
+status: OK

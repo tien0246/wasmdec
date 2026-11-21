@@ -1,0 +1,24 @@
+{
+ "fixture": "ref_is_null.wasm",
+ "wall_ms": 350,
+ "timeout": false,
+ "functions": {
+  "is_null_gc": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-31 errea=0x1000"
+  }
+ },
+ "totals": {
+  "functions": 1,
+  "ok": 0,
+  "interr": 1,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 2
+ }
+}

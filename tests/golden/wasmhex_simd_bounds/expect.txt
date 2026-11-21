@@ -1,0 +1,8 @@
+# SIMD bounds lowering (verify_wasmhex_simd_bounds.py).
+contains: __builtin_trap()
+contains: *(_OWORD *)
+contains: 65520
+not_contains: wasm_memory0_
+not_contains: wasm_memory64_
+not_contains: JUMPOUT(
+status: OK

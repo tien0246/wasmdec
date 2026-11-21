@@ -1,0 +1,7 @@
+# Fixed-memory scalar load/store lowering (verify_wasmhex_fixed_memory_scalar.py).
+contains: *(float *)((unsigned int)a1 + 0xA0LL)
+contains: *(_QWORD *)((unsigned int)a1 + 0xA8LL)
+not_contains: __builtin_trap
+not_contains: wasm_
+not_contains: JUMPOUT(
+status: OK

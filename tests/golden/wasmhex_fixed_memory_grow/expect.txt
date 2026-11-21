@@ -1,0 +1,6 @@
+# Bounded growable Memory32 with memory.grow lowering (verify_wasmhex_fixed_memory_grow.py).
+contains: return *(_DWORD *)(unsigned int)a1;
+contains: __builtin_wasm_memory_grow(0, a1)
+not_contains: __builtin_trap
+not_contains: JUMPOUT(
+status: OK

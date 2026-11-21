@@ -1,0 +1,32 @@
+{
+ "fixture": "backend_segment_start.wasm",
+ "wall_ms": 369,
+ "timeout": false,
+ "functions": {
+  "unsafe": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_func_1": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 2,
+  "ok": 2,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

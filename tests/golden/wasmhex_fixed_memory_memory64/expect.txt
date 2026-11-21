@@ -1,0 +1,6 @@
+# Fixed Memory64 SIMD lowering (verify_wasmhex_fixed_memory64_exact.py).
+contains: return 42;
+not_contains: __builtin_trap
+not_contains: wasm_memory64_
+not_contains: JUMPOUT(
+status: OK

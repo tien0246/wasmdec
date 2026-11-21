@@ -1,0 +1,4 @@
+# T0-era refused-marker: functions below currently FAIL F5; their .c files are intentionally absent (no stale copies).
+# dumped: 2026-11-20T23:58:16
+br_on_non_null_block_params	INTERR	code=-31 errea=0x1016
+br_on_null_block_params	INTERR	code=-31 errea=0x1003

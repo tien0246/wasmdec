@@ -1,0 +1,6 @@
+# Zero-page scalar memory lowering (verify_wasmhex_fixed_memory_scalar_zero.py).
+contains: return *(char *)(unsigned int)a1;
+not_contains: __builtin_trap
+not_contains: wasm_
+not_contains: JUMPOUT(
+status: OK

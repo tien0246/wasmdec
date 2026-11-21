@@ -1,0 +1,34 @@
+# M6-S1: pragmatic clang-tidy ruleset for wasmhex.
+# Focuses on real defect and performance patterns (bugprone-*, performance-*,
+# plus high-signal readability-* and modernize-* checks) while excluding noisy
+# style/heuristic checks that clash with the WebAssembly spec constants,
+# Allman/IDA style, or IDA SDK macro idioms.
+Checks: >
+  -*,
+  bugprone-*,
+  -bugprone-branch-clone,
+  -bugprone-easily-swappable-parameters,
+  -bugprone-implicit-widening-of-multiplication-result,
+  -bugprone-inc-dec-in-conditions,
+  -bugprone-multi-level-implicit-pointer-conversion,
+  -bugprone-narrowing-conversions,
+  -bugprone-signed-bitwise,
+  -bugprone-sizeof-expression,
+  -bugprone-switch-missing-default-case,
+  -bugprone-throwing-static-initialization,
+  performance-*,
+  -performance-enum-size,
+  -performance-faster-string-find,
+  -performance-prefer-single-char-overloads,
+  -performance-unnecessary-value-param,
+  -performance-use-std-move,
+  readability-delete-null-pointer,
+  readability-duplicate-include,
+  readability-misleading-indentation,
+  readability-redundant-control-flow,
+  modernize-deprecated-headers,
+  modernize-use-nullptr,
+  modernize-use-override
+WarningsAsErrors: '*'
+HeaderFilterRegex: 'native/wasmhex/(core|ida|loader|processor|decompiler)/.*\.(hpp|h)$'
+FormatStyle: file

@@ -1,0 +1,7 @@
+# S11: zero-argument Go call renders callee() with no phantom PC_B parameter.
+contains: wasm_func_3
+contains: ()
+contains: return 9;
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

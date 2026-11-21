@@ -1,0 +1,19 @@
+# N3-2 expect.txt format — data-driven test expectations
+#
+# Each line is one expectation. The runner reads golden .c output and
+# checks every expectation. Format:
+#   contains: <text>          — text must appear in pseudocode
+#   not_contains: <text>      — text must NOT appear
+#   regex: <pattern>          — regex must match
+#   unsupported: <prefix>     — function fails with INTERR whose detail
+#                                starts with this prefix (fail-closed OK)
+#   status: OK                — function must decompile successfully
+#   status: INTERR            — function must fail (any reason)
+#   lines_lt: <N>             — pseudocode line count < N
+#
+# Example (from bt_small):
+contains: switch
+contains: case 0
+not_contains: STACK[
+not_contains: JUMPOUT(
+status: OK

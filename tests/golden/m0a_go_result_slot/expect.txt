@@ -1,0 +1,12 @@
+# M0/3.1 (todo 3.1): the Go result-slot fixture — callee $sprintf_like
+# (string param + variadic slice + string result at [40,56)) and a caller
+# that reads the result back at the same window. The callee's sret display
+# (`void *result@<r1>`) exists only because the G5-S2b caller cross-check
+# proved the slots; the call site renders the five outgoing words through
+# a cast (no positional join onto `result`), and the caller's post-call
+# read lands inside the result window.
+contains: void __usercall wasm_func_1(int a1@<r0>, void *result@<r1>)
+contains: *(_QWORD *)(unsigned int)result =
+not_contains: JUMPOUT(
+not_contains: INTERR
+status: OK

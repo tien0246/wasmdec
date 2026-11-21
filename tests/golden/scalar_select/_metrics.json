@@ -1,0 +1,80 @@
+{
+ "fixture": "scalar_select.wasm",
+ "wall_ms": 381,
+ "timeout": false,
+ "functions": {
+  "target": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_untyped": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_typed": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_untyped": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 15,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_typed": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "funcref_local": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x1025"
+  },
+  "funcref_typed": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "externref_typed": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 8,
+  "ok": 7,
+  "interr": 1,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

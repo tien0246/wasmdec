@@ -1,0 +1,32 @@
+{
+ "fixture": "wasmhex_call_ref_import.wasm",
+ "wall_ms": 482,
+ "timeout": false,
+ "functions": {
+  "call_import": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x1000"
+  },
+  "tail_import": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x1007"
+  }
+ },
+ "totals": {
+  "functions": 2,
+  "ok": 0,
+  "interr": 2,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

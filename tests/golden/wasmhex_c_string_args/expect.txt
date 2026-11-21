@@ -1,0 +1,11 @@
+# C string args (P0-1 proof extension): constant arguments at proven
+# pointer-typed positions render as string literals / &item; unproven
+# positions (the sscanf varargs area, hex2's second parameter) stay numeric.
+contains: sscanf("Good job!", "%2x", 2368)
+contains: sink(&unk_900)
+contains: hex2(&unk_420, 2368)
+contains: sscanf(*(_DWORD *)((char *)&unk_C + v2), "%2x", v2)
+not_contains: sscanf(*(_DWORD *)((char *)&unk_C + v2), 1024
+not_contains: sink(2304)
+not_contains: hex2(1056
+status: OK

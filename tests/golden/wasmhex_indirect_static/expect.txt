@@ -1,0 +1,8 @@
+# Static and dynamic indirect table slot resolution (verify_wasmhex_indirect_static_f5.py).
+contains: add10(a1)
+contains: add20(a1)
+contains: wasm_trap_call_indirect_type
+contains: wasm_trap_call_indirect_bounds
+not_contains: wasm_call_indirect_table
+not_contains: JUMPOUT(
+status: OK

@@ -1,0 +1,112 @@
+{
+ "fixture": "wasmhex_indirect_global_indices.wasm",
+ "wall_ms": 458,
+ "timeout": false,
+ "functions": {
+  "target0": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "target1": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "target2": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "target3": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "global_index32": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "global_alias32": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "global_local_alias32": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "global_index64": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "global_alias64": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "global_local_alias64": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "mutable_global_index": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "imported_global_index": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 12,
+  "ok": 12,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

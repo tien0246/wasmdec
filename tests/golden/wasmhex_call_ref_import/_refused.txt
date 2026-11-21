@@ -1,0 +1,4 @@
+# T0-era refused-marker: functions below currently FAIL F5; their .c files are intentionally absent (no stale copies).
+# dumped: 2026-11-20T23:57:55
+call_import	INTERR	code=-1 errea=0x1000
+tail_import	INTERR	code=-1 errea=0x1007

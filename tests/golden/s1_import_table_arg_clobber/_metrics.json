@@ -1,0 +1,40 @@
+{
+ "fixture": "s1_import_table_arg_clobber.wasm",
+ "wall_ms": 425,
+ "timeout": false,
+ "functions": {
+  "s1_first_arg_survives": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 7,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "s1_swapped": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 7,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "s1_loaded_arg": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 7,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 3,
+  "ok": 3,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

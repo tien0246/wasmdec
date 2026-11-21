@@ -1,0 +1,8 @@
+# M1-S3 pinned (SEMANTICS.md §5b contracts 1+2): out-of-frame C-frame
+# markers degrade to the sp-global linear address (wasm_global_0 - 16)
+# and every access renders as a flat linear deref — one lowering, no
+# trap helpers, no JUMPOUT.
+contains: wasm_global_0 - 16
+contains: unk_C
+not_contains: JUMPOUT(
+not_contains: wasm_trap

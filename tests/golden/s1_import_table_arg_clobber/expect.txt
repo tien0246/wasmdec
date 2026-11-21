@@ -1,0 +1,8 @@
+# S1: imported-table call_indirect preserves first argument without clobbering
+# it with the callee lookup register.
+contains: __indirect_function_table[a2](a1, a2)
+contains: __indirect_function_table[a2](unk_400, a2)
+contains: __indirect_function_table[a1](a2, a1)
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

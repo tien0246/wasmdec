@@ -1,0 +1,11 @@
+# S9/P0-6: unnamed wasm_func_N and infix xwasm_func_9 callees keep their
+# stack-guard prologues visible.
+contains: wasm_func_1(0);
+contains: xwasm_func_9(0);
+contains: 4660
+contains: return 42;
+contains: return 7;
+contains: return 9;
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

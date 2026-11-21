@@ -1,0 +1,10 @@
+(module
+  (global $var (mut i32) (i32.const 22))
+  (global $helper i32 (i32.const 7))
+  (func $foo (result i32) (i32.const 21))
+  (func $bar (result i32) (i32.const 23))
+  (func $read_var (export "read_var") (result i32) (global.get $var))
+  (func $write_var (export "write_var") (param i32) (global.set $var (local.get 0)))
+  (func $read_helper (export "read_helper") (result i32) (global.get $helper))
+  (export "selected_bar" (func $bar))
+)

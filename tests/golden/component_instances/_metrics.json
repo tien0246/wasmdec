@@ -1,0 +1,15 @@
+{
+ "fixture": "component_instances.wasm",
+ "wall_ms": 134,
+ "timeout": false,
+ "functions": {},
+ "totals": {
+  "functions": 0,
+  "ok": 0,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

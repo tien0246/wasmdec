@@ -1,0 +1,10 @@
+(module
+  (type $sig (func (result i32)))
+  (import "env" "a" (table $a 2 funcref))
+  (import "env" "b" (table $b 2 funcref))
+  (func $a_func (type $sig) (i32.const 11))
+  (elem (table $b) (i32.const 0) func $a_func)
+  (func $read_b (export "read_b") (result i32)
+    (i32.const 0) (call_indirect $b (type $sig)))
+  (export "table_a" (table 0))
+  (export "table_b" (table 1)))

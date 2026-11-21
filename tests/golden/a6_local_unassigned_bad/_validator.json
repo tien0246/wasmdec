@@ -1,0 +1,4 @@
+{
+ "valid": false,
+ "reason": "tests/fixtures/a6_local_unassigned_bad.wasm:000001c: error: uninitialized local reference"
+}

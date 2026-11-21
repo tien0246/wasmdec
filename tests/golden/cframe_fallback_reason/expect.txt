@@ -1,0 +1,6 @@
+# M1-S3 pinned (SEMANTICS.md §5b contracts 3+4): C-frame fallback degrades
+# through the sp-global linear address.
+contains: _stack_pointer + 4
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

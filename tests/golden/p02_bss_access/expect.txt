@@ -1,0 +1,11 @@
+# P0-2: a BSS access (offset beyond every data segment) dereferences the
+# linear-memory segment numerically — no loc_/unk_ label pointing into
+# .text, no bogus symbol read.
+not_contains: loc_
+not_contains: unk_2
+not_contains: word_
+not_contains: &algn_
+contains: 130048
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

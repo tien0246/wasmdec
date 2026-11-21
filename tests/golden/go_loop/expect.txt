@@ -1,0 +1,18 @@
+# G12 "loop" (todo §5 G12 / §3.10): sourced Go fixture — tests/go/loop/main.go
+# (go1.27.4, sha256 trong tests/go/README.md). Pseudocode kỳ vọng + bảng
+# PASS/FAIL: expected_notes.md (cùng thư mục).
+# Pins cấu trúc: vòng lặp `while` thật (resume dispatcher đã bị thay — G3,
+# mọi kích thước — G11), guard morestack biến mất (G10), println nở thành
+# printlock/printint/printnl/printunlock đúng thứ tự nguồn. Giới hạn hiển
+# thị đã biết (ghi trong notes): tham số/kết quả đi qua ô stack Go (G4/G5
+# còn mở), kết quả chưa nâng thành `return` (x=f declined).
+contains: __usercall main.sumSquares@<r0>(int a1@<r0>)
+contains: while ( v2 <=
+contains: v3 += v2 * v2;
+contains: ++v2;
+contains: runtime.printint
+not_contains: runtime.morestack
+not_contains: switch (a1)
+not_contains: JUMPOUT(
+not_contains: INTERR
+status: OK

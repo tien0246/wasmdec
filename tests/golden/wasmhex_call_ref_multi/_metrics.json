@@ -1,0 +1,96 @@
+{
+ "fixture": "wasmhex_call_ref_multi.wasm",
+ "wall_ms": 413,
+ "timeout": false,
+ "functions": {
+  "pair_i64_target": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "pair_target0": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "pair_target1": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "six_target0": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "six_target1": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "call_ref_pair_i64": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x1063"
+  },
+  "call_ref_pair_join": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x106a"
+  },
+  "return_call_ref_pair_join": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x107f"
+  },
+  "call_ref_six_join": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x1094"
+  },
+  "return_call_ref_six_join": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x10a9"
+  }
+ },
+ "totals": {
+  "functions": 10,
+  "ok": 5,
+  "interr": 5,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 16
+ }
+}

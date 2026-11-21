@@ -1,0 +1,24 @@
+{
+ "fixture": "bt_depth_per_case_256.wasm",
+ "wall_ms": 601,
+ "timeout": false,
+ "functions": {
+  "dispatch": {
+   "status": "OK",
+   "ms": 42,
+   "lines": 778,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 1,
+  "ok": 1,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

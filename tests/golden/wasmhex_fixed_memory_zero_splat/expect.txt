@@ -1,0 +1,6 @@
+# Zero-page SIMD splat load lowering (verify_wasmhex_fixed_memory_zero.py).
+contains: return 42;
+not_contains: __builtin_trap
+not_contains: wasm_
+not_contains: JUMPOUT(
+status: OK

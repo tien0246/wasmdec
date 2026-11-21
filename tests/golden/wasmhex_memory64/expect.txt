@@ -1,0 +1,7 @@
+# Direct Memory64 scalar lowering (verify_wasm_memory64_scalar_direct.py).
+contains: *(float *)(a1 + 0x100000002LL)
+contains: *(_QWORD *)(a1 + 0x100000003LL)
+not_contains: __builtin_trap
+not_contains: wasm_memory64_
+not_contains: JUMPOUT(
+status: OK

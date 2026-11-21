@@ -1,0 +1,48 @@
+{
+ "fixture": "wasmhex_loop_transfers.wasm",
+ "wall_ms": 393,
+ "timeout": false,
+ "functions": {
+  "early_continue": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "outer_continue_from_inner": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 23,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "nested_block_continue": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 17,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "nested_else_branch": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 4,
+  "ok": 4,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

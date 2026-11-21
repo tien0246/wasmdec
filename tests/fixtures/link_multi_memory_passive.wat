@@ -1,0 +1,11 @@
+(module
+  (memory $m0 1)
+  (memory $m1 1)
+  (data "\55\00\00\00")
+  (func $install (export "install_passive")
+    (i32.const 0) (i32.const 0) (i32.const 4)
+    (memory.init 1 0)
+    (data.drop 0))
+  (func $read (export "read_passive") (result i32)
+    (i32.load (memory 1) (i32.const 0)))
+  (export "memory_passive" (memory $m1)))

@@ -1,0 +1,162 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # SDK-free core: build, unit tests and sanitizer fuzzing on Linux and macOS.
+  # Every step fails the job on error; nothing is skipped silently.
+  core:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure (no IDA SDK)
+        run: cmake -S . -B build/core -DWASMHEX_NATIVE=OFF -DWASMHEX_FUZZ=ON -DCMAKE_BUILD_TYPE=Debug
+
+      - name: Build
+        run: cmake --build build/core -j4
+
+      - name: Unit tests
+        run: ctest --test-dir build/core --output-on-failure
+
+      - name: Fuzz smoke (ASan + UBSan, deterministic)
+        run: build/core/tests/fuzz/fuzz_parse_standalone 50 tests/fixtures/*.wasm
+
+      - name: P5 gate (no Python or Node scripts in repository)
+        run: test -z "$(find . -path ./.git -prune -o \( -name '*.py' -o -name '*.pyc' -o -name '*.mjs' -o -name '*.js' \) -print)"
+
+  # IDA modules: only where the SDK is available (secret), and then for real.
+  native:
+    runs-on: macos-latest
+    # `secrets` is not available in job-level `if`; opt in with a repository variable.
+    if: ${{ vars.IDASDK_AVAILABLE == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build wasmdec + wasmdecldr
+        env:
+          IDASDK: ${{ secrets.IDASDK_PATH }}
+        # K8: the deprecation gate (IDA_DEPRECATED_AS_ERROR) defaults ON
+        # inside native/wasmhex/CMakeLists.txt whenever the SDK is >= 9.5.
+        run: |
+          cmake -S . -B build/native -DCMAKE_BUILD_TYPE=Release
+          cmake --build build/native --target wasmdec wasmdecldr -j"$(sysctl -n hw.ncpu)"
+
+  # K4: public IDA SDK compile-check matrix (no secrets required).
+  # Checks out HexRaysSA/ida-sdk at v9.4.0-release and v9.5.0-release on
+  # Linux and macOS and builds the native wasmdec + wasmdecldr targets
+  # against the public stubs (libida.so on Linux, libida.tbd on macOS),
+  # plus the wasmhex_dep_check graph gate. Windows is omitted because the
+  # IDA SDK CMake init assumes MSVC/Visual Studio environment discovery on
+  # Windows runners without a cross toolchain file.
+  #
+  # K4 first-run findings (simulated locally against both tags, macOS arm64):
+  # 1. IDASDK is a job-level env: wasmhex_dep_check re-configures the tree
+  #    via `cmake --graphviz` from the Build step, which needs IDASDK too.
+  # 2. The SDK's ida_add_* helpers append `-w` to every addon target, which
+  #    silences K3's -Werror=deprecated-declarations entirely (verified:
+  #    clang -w wins over -Werror=deprecated-declarations in either order).
+  #    Fixed in native/wasmhex/CMakeLists.txt: it defaults
+  #    IDA_DEPRECATED_AS_ERROR=ON whenever IDA_SDK_VERSION >= 950, so the
+  #    9.5 cmake skips `-w` and adds its own -Werror=deprecated-declarations.
+  #    The 9.4 cmake has no such option, so the 9.4 leg stays a pure
+  #    compile-check for deprecations (sources are grep-clean since K3's
+  #    38/38 migration).
+  sdk-matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        sdk_tag: [v9.4.0-release, v9.5.0-release]
+    runs-on: ${{ matrix.os }}
+    env:
+      # Job-level so the Build step's dep_check (graphviz re-configure) sees it.
+      IDASDK: ${{ github.workspace }}/idasdk
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout public IDA SDK (${{ matrix.sdk_tag }})
+        uses: actions/checkout@v4
+        with:
+          repository: HexRaysSA/ida-sdk
+          ref: ${{ matrix.sdk_tag }}
+          path: idasdk
+          fetch-depth: 1
+
+      - name: Configure against IDA SDK (${{ matrix.sdk_tag }})
+        run: |
+          # IDA_DEPRECATED_AS_ERROR defaults ON for SDK >= 9.5 inside
+          # native/wasmhex/CMakeLists.txt (K8); nothing to pass here.
+          cmake -S native/wasmhex -B build/sdk-matrix -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build wasmdec + wasmdecldr + dep_check (${{ matrix.sdk_tag }})
+        run: |
+          cmake --build build/sdk-matrix --target wasmdec wasmdecldr wasmhex_dep_check -j4
+
+  # Requires a self-hosted runner with IDA Professional 9.5 installed.
+  ida-selfhosted:
+    runs-on: self-hosted
+    # `runner` is not available in job-level `if`; opt in with a repository variable.
+    if: ${{ vars.IDA_SELFHOSTED == 'true' }}
+    needs: core
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure (tools mandatory, V4) + build all-C++ IDA runner + runtime oracle + diffrt
+        env:
+          IDASDK: ${{ secrets.IDASDK_PATH }}
+        # K8: the deprecation gate (IDA_DEPRECATED_AS_ERROR) defaults ON
+        # inside native/wasmhex/CMakeLists.txt whenever the SDK is >= 9.5.
+        # V4 (todo 10): WASMHEX_REQUIRE_TOOLS=ON turns a missing optional-gate
+        # tool (clang-format, clang-tidy, wat2wasm, libwasmtime) into a
+        # CONFIGURE error — runtime_oracle/diffrt can no longer silently drop
+        # out when libwasmtime is absent on the self-hosted runner; the steps
+        # below then run them for real.
+        # WASMHEX_REQUIRE_CORPUS=ON keeps the sweep machine strict: a missing
+        # corpus fails corpus-check AND the corpus-dependent core_tests cases
+        # (the public default skips both with a notice).
+        run: |
+          [ -z "$IDASDK" ] && IDASDK="$HOME/idasdk"
+          export IDASDK
+          cmake -S . -B build/selfhosted -DCMAKE_BUILD_TYPE=Release -DWASMHEX_REQUIRE_TOOLS=ON -DWASMHEX_REQUIRE_CORPUS=ON
+          cmake --build build/selfhosted --target wasmdec wasmdecldr wasmdec_runner runtime_oracle diffrt_gen_inputs diffrt_transform diffrt_compare diffrt_wasm_runner -j"$(sysctl -n hw.ncpu)"
+
+      - name: Corpus manifest check (V2)
+        # The self-hosted runner is the sweep machine: it must hold every
+        # pinned corpus (tests/corpus/manifest.tsv) or the golden sweep
+        # hashes below are meaningless. WASMHEX_REQUIRE_CORPUS=ON makes a
+        # missing corpus FAIL (the public default skips with a notice).
+        run: |
+          cmake -D WASMHEX_CORPUS_MANIFEST=tests/corpus/manifest.tsv \
+                -D WASMHEX_REQUIRE_CORPUS=ON \
+                -P tests/corpus/check_corpus.cmake
+
+      - name: Golden expect + br_table matrix (wasmdec_runner)
+        run: |
+          IDABIN="${{ secrets.IDASDK_BIN }}"
+          [ -z "$IDABIN" ] && IDABIN="$HOME/idasdk/src/bin"
+          build/selfhosted/wasmdec_runner expect
+          build/selfhosted/wasmdec_runner matrix --idausr "$IDABIN"
+
+      - name: C++ runtime oracle (M6-S3)
+        run: |
+          build/selfhosted/tests/runtime_oracle/runtime_oracle --cases tests/runtime_oracle/cases.tsv --fixtures tests/fixtures
+
+      - name: Differential runtime (C4)
+        run: |
+          bash tests/diffrt/run_differential.sh build/selfhosted 32
+
+      - name: Integration checkers (wasmdec_runner check)
+        run: |
+          IDABIN="${{ secrets.IDASDK_BIN }}"
+          [ -z "$IDABIN" ] && IDABIN="$HOME/idasdk/src/bin"
+          build/selfhosted/wasmdec_runner check all --idausr "$IDABIN"
+
+      - name: P5 gate (no Python or Node scripts in repository)
+        run: test -z "$(find . -path ./.git -prune -o \( -name '*.py' -o -name '*.pyc' -o -name '*.mjs' -o -name '*.js' \) -print)"

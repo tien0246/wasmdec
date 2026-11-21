@@ -1,0 +1,18 @@
+# M0/3.3 (todo 3.3): memory.fill / memory.copy render through the SAME
+# linear-memory representation as the surrounding loads/stores — one memory
+# region per address, alias analysis intact. Pins updated for the D1 flat
+# address representation (M1-D1, T0 rev24): wasm address == EA, zero-
+# extension casts visible, adjacent 4-byte loads fuse to one 8-byte load. Each function below mixes a
+# bulk op with scalar accesses to the identical window; a regression to the
+# raw-linear form would print the bulk destination without the base/selector
+# shape the loads use.
+contains: memset((unsigned int)a1, 0x5Au, 0x10u);
+contains: HIDWORD(*(_QWORD *)(v1 + 8));
+contains: memset((unsigned int)a1, 0, 0x40u);
+contains: *(_QWORD *)(unsigned int)a1 = 0x1122334455667788LL;
+contains: memmove((unsigned int)a1, (unsigned int)a2, 0x20u);
+contains: *(_QWORD *)((unsigned int)a1 + 0x18LL);
+not_contains: __builtin_trap
+not_contains: JUMPOUT(
+not_contains: INTERR
+status: OK

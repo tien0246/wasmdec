@@ -1,0 +1,277 @@
+# mergeProcessed golden baseline (_ZN14duckdb_tdigest7TDigest14mergeProcessedERKNSt3__26vectorIPKS0_NS1_9allocatorIS4_EEEE)
+# METRICS lines=273 stack=0 helpers=3 coerce=0 goto=8 lvars=71
+# Regenerate: wasmdec_runner golden-merge --regenerate
+// wasmdec: bounds=hidden
+void __usercall duckdb_tdigest::TDigest::mergeProcessed(
+        struct duckdb_tdigest__TDigest *this@<r0>,
+        struct std____2__vector *a2@<r1>)
+{
+  unsigned int v2; // kr00_4
+  unsigned int v3; // kr18_4
+  int v4; // kr38_4
+  unsigned int v5; // kr08_4
+  unsigned int v6; // kr20_4
+  unsigned int v7; // kr28_4
+  int v8; // kr20_4
+  unsigned int v9; // kr30_4
+  int v10; // kr40_4
+  unsigned int v11; // kr20_4
+  int v12; // kr08_4
+  unsigned int v13; // kr28_4
+  int v14; // kr08_4
+  int v15; // kr28_4
+  unsigned int v16; // kr00_4
+  int v17; // kr08_4
+  unsigned int v18; // kr28_4
+  unsigned __int64 v19; // kr70_8
+  int v20; // kr78_4
+  int v21; // kr30_4
+  unsigned int v22; // kr20_4
+  int v23; // kr38_4
+  int v24; // kr40_4
+  __int64 v25; // kr68_8
+  int v26; // kr18_4
+  unsigned int v27; // kr08_4
+  int v28; // kr28_4
+  unsigned int v29; // kr30_4
+  unsigned int v30; // kr18_4
+  int v31; // kr18_4
+  unsigned int v32; // kr18_4
+  unsigned int v33; // kr28_4
+  unsigned int v34; // kr30_4
+  int v35; // kr38_4
+  unsigned int v36; // kr78_4
+  unsigned int v37; // kr20_4
+  unsigned int v38; // kr08_4
+  unsigned int i; // kr20_4
+  int v40; // kr28_4
+  int v41; // kr40_4
+  unsigned int v42; // kr00_4
+  unsigned int v43; // kr80_4
+  unsigned int v44; // kr78_4
+  unsigned int v45; // kr30_4
+  int v46; // kr38_4
+  int v47; // kr08_4
+  unsigned int v48; // kr18_4
+  unsigned __int64 v49; // kr70_8
+  int v50; // kr78_4
+  int v51; // kr48_4
+  unsigned int v52; // kr18_4
+  unsigned int v53; // kr08_4
+  int v54; // kr18_4
+  unsigned int v55; // kr08_4
+  unsigned int v56; // kr18_4
+  double v57; // kr90_8
+  double v58; // kr90_8
+  int matching_catch_2; // kr78_4
+  int v60; // kr18_4
+  int v61; // kr78_4
+  __int64 v62; // [rsp+8h] [rbp-38h] BYREF
+  unsigned int v63; // [rsp+14h] [rbp-2Ch] BYREF
+  unsigned int v64; // [rsp+18h] [rbp-28h]
+  unsigned int v65; // [rsp+1Ch] [rbp-24h]
+  unsigned int v66; // [rsp+20h] [rbp-20h] BYREF
+  int v67; // [rsp+24h] [rbp-1Ch]
+  int v68; // [rsp+28h] [rbp-18h]
+  double v69; // 0:ecx.4,4:eax.4
+  double v70; // 0:ecx.4,4:eax.4
+
+  v2 = (unsigned int)this;
+  v3 = 0;
+  v4 = *(_DWORD *)((unsigned int)a2 + 4LL);
+  v5 = *(_DWORD *)(unsigned int)a2;
+  if ( v4 == v5 )
+    return;
+  v68 = 0;
+  v66 = 0;
+  v67 = 0;
+  do
+  {
+    v6 = *(_DWORD *)v5;
+    v7 = *(_DWORD *)(v6 + 0x34LL);
+    v8 = *(_DWORD *)(v6 + 0x30LL);
+    if ( v7 != v8 )
+    {
+      v64 = v7;
+      v63 = v8;
+      wasm_func_32420((int)&v66, (int)&v63);    // wasmdec: try-region
+      if ( *(_DWORD *)GOT.mem.__THREW__ == 1 )
+        goto LABEL_62;
+      *(double *)(v2 + 0x20LL) = *(double *)(*(unsigned int *)v5 + 0x20LL) + *(double *)(v2 + 0x20LL);
+      v3 += (int)(v7 - v8) >> 4;
+    }
+    v5 += 4;
+  }
+  while ( v5 != v4 );
+  if ( v3 == 0 )
+    goto LABEL_57;
+  v11 = *(_DWORD *)(v2 + 0x34LL);
+  v12 = *(_DWORD *)(v2 + 0x30LL);
+  if ( v11 == v12 )
+  {
+    v65 = 0;
+    v63 = 0;
+    v64 = 0;
+LABEL_12:
+    if ( v3 >= 0x10000000 )
+    {
+      std::__2::vector<std::__2::locale::facet *,std::__2::__sso_allocator<std::__2::locale::facet *,30ul>>::__throw_length_error[abi:ne180100]((int)&v63);
+      if ( *(_DWORD *)GOT.mem.__THREW__ != 1 )
+        __builtin_trap();
+      goto LABEL_60;
+    }
+    v18 = GOT.mem.__THREW__;
+    v20 = invoke_ii(GOT.func._Znwm, 16 * v3);
+    *(_DWORD *)v18 = 0;
+    if ( *(_DWORD *)(unsigned int)GOT.mem.__THREW__ == 1 )
+    {
+LABEL_60:
+      v60 = __cxa_find_matching_catch_2();      // wasmdec: EH landing pad (catch + cleanup + resume)
+      if ( v63 != 0 )
+      {
+        v64 = v63;
+        free((void *)(int)v63);
+      }
+LABEL_63:
+      if ( v66 != 0 )
+      {
+        v67 = v66;
+        free((void *)(int)v66);
+      }
+      __resumeException(v60);
+      __builtin_trap();
+    }
+    v64 = v20;
+    v63 = v20;
+    v65 = v20 + 16 * v3;
+    goto LABEL_17;
+  }
+  v64 = v11;
+  v63 = v12;
+  wasm_func_32420((int)&v66, (int)&v63);        // wasmdec: try-region
+  if ( *(_DWORD *)GOT.mem.__THREW__ == 1 )
+  {
+LABEL_62:
+    v60 = __cxa_find_matching_catch_2();        // wasmdec: EH landing pad (catch + cleanup + resume)
+    goto LABEL_63;
+  }
+  v12 = *(_DWORD *)(v2 + 0x30LL);
+  v15 = *(_DWORD *)(v2 + 0x34LL);
+  v65 = 0;
+  v63 = 0;
+  v64 = 0;
+  v3 += (v15 - v12) >> 4;
+  if ( v3 != 0 )
+    goto LABEL_12;
+LABEL_17:
+  v22 = v66;
+  v23 = v67;
+  if ( v66 == v67 )
+    goto LABEL_53;
+  do
+  {
+    v62 = *(_QWORD *)v22;
+    v24 = (int)(v23 - v22) >> 3;
+    if ( v24 >= 2 )
+    {
+      v25 = *(_QWORD *)v22;
+      v26 = 0;
+      v27 = v22;
+      do
+      {
+        v28 = (2 * v26) | 1;
+        v29 = v27;
+        v27 += 8 * v26 + 8;
+        v26 = 2 * v26 + 2;
+        if ( v24 > v26 )
+        {
+          if ( *(double *)*(unsigned int *)v27 > *(double *)*(unsigned int *)(v27 + 8LL) )
+            v27 += 8;
+          else
+            v26 = v28;
+        }
+        else
+        {
+          v26 = v28;
+        }
+        *(_QWORD *)v29 = *(_QWORD *)v27;
+      }
+      while ( v26 <= (int)((unsigned int)(v24 - 2) >> 1) );
+      v30 = v23 - 8;
+      if ( v23 - 8 == v27 )
+      {
+        *(_QWORD *)v27 = v25;
+      }
+      else
+      {
+        *(_QWORD *)v27 = *(_QWORD *)v30;
+        *(_QWORD *)v30 = v25;
+        v31 = (int)(v27 - v22 + 8) >> 3;
+        if ( v31 >= 2 )
+        {
+          v32 = (unsigned int)(v31 - 2) >> 1;
+          v33 = v22 + 8 * v32;
+          v34 = *(_DWORD *)v27;
+          if ( *(double *)*(unsigned int *)v33 > *(double *)v34 )
+          {
+            v35 = *(_DWORD *)(v27 + 4LL);
+            do
+            {
+              v36 = v27;
+              v27 = v33;
+              *(_QWORD *)v36 = *(_QWORD *)v33;
+              if ( v32 == 0 )
+                break;
+              v32 = (v32 - 1) >> 1;
+              v33 = v22 + 8 * v32;
+            }
+            while ( *(double *)*(unsigned int *)v33 > *(double *)v34 );
+            *(_DWORD *)(v27 + 4LL) = v35;
+            *(_DWORD *)v27 = v34;
+          }
+        }
+      }
+    }
+    v67 -= 8;
+    std::vector<T>::push_back(&v63, v62);
+    LODWORD(v62) = v62 + 16;
+    if ( (_DWORD)v62 != HIDWORD(v62) )
+    {
+      wasm_func_32420((int)&v66, (int)&v62);    // wasmdec: try-region
+      if ( *(_DWORD *)GOT.mem.__THREW__ == 1 )
+        goto LABEL_60;
+    }
+    v22 = v66;
+    v23 = v67;
+  }
+  while ( v66 != v67 );
+  v12 = *(_DWORD *)(v2 + 0x30LL);
+LABEL_53:
+  if ( v12 != 0 )
+  {
+    *(_DWORD *)(v2 + 0x34LL) = v12;
+    free((void *)v12);
+    *(_DWORD *)(v2 + 0x38LL) = 0;
+    *(_QWORD *)(v2 + 0x30LL) = 0;
+  }
+  v55 = v63;
+  *(_DWORD *)(v2 + 0x30LL) = v63;
+  v56 = v64;
+  *(_DWORD *)(v2 + 0x34LL) = v64;
+  *(_DWORD *)(v2 + 0x38LL) = v65;
+  v64 = 0;
+  v65 = 0;
+  if ( v55 != v56 )
+  {
+    v57 = *(double *)v55 < *(double *)(v2 + 8LL) ? *(double *)v55 : *(double *)(v2 + 8LL);
+    *(double *)(v2 + 8LL) = v57;
+    v58 = *(double *)(v56 - 16) > *(double *)(v2 + 0x10LL) ? *(double *)(v56 - 16) : *(double *)(v2 + 0x10LL);
+    *(double *)(v2 + 0x10LL) = v58;
+  }
+LABEL_57:
+  if ( v66 != 0 )
+  {
+    v67 = v66;
+    free((void *)(int)v66);
+  }
+}

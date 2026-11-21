@@ -1,0 +1,10 @@
+# Multi-value and ordered-shift call lowering (verify_wasmhex_calls_multi.py).
+contains: pair(a1)
+contains: six(a1,
+contains: target_scalar(value)
+contains: wasm_trap_call_indirect_type()
+contains: effect(a1)
+contains: effect(a2)
+not_contains: wasm_call_indirect_table
+not_contains: JUMPOUT(
+status: OK

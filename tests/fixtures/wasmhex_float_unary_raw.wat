@@ -1,0 +1,18 @@
+(module
+  (func (export "f32_ceil_bits") (param i32) (result i32)
+    local.get 0 f32.reinterpret_i32 f32.ceil i32.reinterpret_f32)
+  (func (export "f32_floor_bits") (param i32) (result i32)
+    local.get 0 f32.reinterpret_i32 f32.floor i32.reinterpret_f32)
+  (func (export "f32_trunc_bits") (param i32) (result i32)
+    local.get 0 f32.reinterpret_i32 f32.trunc i32.reinterpret_f32)
+  (func (export "f32_sqrt_bits") (param i32) (result i32)
+    local.get 0 f32.reinterpret_i32 f32.sqrt i32.reinterpret_f32)
+
+  (func (export "f64_ceil_bits") (param i64) (result i64)
+    local.get 0 f64.reinterpret_i64 f64.ceil i64.reinterpret_f64)
+  (func (export "f64_floor_bits") (param i64) (result i64)
+    local.get 0 f64.reinterpret_i64 f64.floor i64.reinterpret_f64)
+  (func (export "f64_trunc_bits") (param i64) (result i64)
+    local.get 0 f64.reinterpret_i64 f64.trunc i64.reinterpret_f64)
+  (func (export "f64_sqrt_bits") (param i64) (result i64)
+    local.get 0 f64.reinterpret_i64 f64.sqrt i64.reinterpret_f64))

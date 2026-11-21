@@ -1,0 +1,10 @@
+# P7-3 differential -O0 golden structural checks (check_wasmhex_differential.py).
+contains: switch
+contains: case 1:
+contains: case 2:
+contains: case 3:
+contains: default:
+contains: factorial(
+not_contains: STACK[
+not_contains: JUMPOUT(
+status: OK

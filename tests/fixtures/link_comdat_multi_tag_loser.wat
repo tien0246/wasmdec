@@ -1,0 +1,12 @@
+(module
+  (type $i32_tag_type (func (param i32)))
+  (type $i64_tag_type (func (param i64)))
+  (tag $tag_a (type $i32_tag_type))
+  (tag $tag_b (type $i64_tag_type))
+  (func (export "throw_a") (result i32)
+    (i32.const 17)
+    (throw $tag_a))
+  (func (export "throw_b") (result i32)
+    (i64.const 42)
+    (throw $tag_b))
+)

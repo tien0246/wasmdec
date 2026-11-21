@@ -1,0 +1,7 @@
+# Fixed-memory SIMD v128 lowering (verify_wasmhex_fixed_memory_v128.py).
+contains: *(_OWORD *)(unsigned int)a1 = *(_OWORD *)(unsigned int)a2;
+contains: MK_FP(
+not_contains: __builtin_trap
+not_contains: wasm_
+not_contains: JUMPOUT(
+status: OK

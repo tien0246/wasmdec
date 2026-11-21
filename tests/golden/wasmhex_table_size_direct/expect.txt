@@ -1,0 +1,6 @@
+# Direct fixed-table table.size lowering (verify_wasmhex_table_size_direct.py).
+contains: return 7;
+contains: LODWORD(result) = 9;
+not_contains: wasm_
+not_contains: JUMPOUT(
+status: OK

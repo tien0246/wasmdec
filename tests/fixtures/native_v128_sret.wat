@@ -1,0 +1,42 @@
+(module
+  (type $vector_to_vector (func (param v128) (result v128)))
+  (type $i64_to_vector (func (param i64) (result v128)))
+  (table 2 funcref)
+
+  (func $identity_v128 (export "identity_v128") (type $vector_to_vector)
+    local.get 0)
+  (func $forward_v128 (export "forward_v128") (type $vector_to_vector)
+    local.get 0 call $identity_v128)
+  (func $tail_forward_v128 (export "tail_forward_v128") (type $vector_to_vector)
+    local.get 0 return_call $identity_v128)
+  (func $call_ref_v128 (export "call_ref_v128") (param v128)
+    (param (ref null $vector_to_vector)) (result v128)
+    local.get 0 local.get 1 call_ref $vector_to_vector)
+  (func $tail_call_ref_v128 (export "tail_call_ref_v128") (param v128)
+    (param (ref null $vector_to_vector)) (result v128)
+    local.get 0 local.get 1 return_call_ref $vector_to_vector)
+  (func $tail_call_indirect_v128 (export "tail_call_indirect_v128") (param v128 i32)
+    (result v128)
+    local.get 0 local.get 1 return_call_indirect (type $vector_to_vector))
+  (func $make_v128 (export "make_v128") (type $i64_to_vector)
+    local.get 0 i64x2.splat)
+  (elem (i32.const 0) func $identity_v128 $make_v128)
+
+  (func (export "check_direct") (param i64) (result i64)
+    local.get 0 i64x2.splat call $forward_v128 i64x2.extract_lane 1)
+  (func (export "check_tail") (param i64) (result i64)
+    local.get 0 i64x2.splat call $tail_forward_v128 i64x2.extract_lane 1)
+  (func (export "check_tail_indirect") (param i64 i32) (result i64)
+    local.get 0 i64x2.splat local.get 1
+    call $tail_call_indirect_v128 i64x2.extract_lane 1)
+  (func (export "check_call_ref") (param i64) (result i64)
+    local.get 0 i64x2.splat ref.func $identity_v128
+    call_ref $vector_to_vector i64x2.extract_lane 1)
+  (func (export "check_indirect") (param i64 i32) (result i64)
+    local.get 0 i64x2.splat local.get 1
+    call_indirect (type $vector_to_vector) i64x2.extract_lane 1)
+  (func (export "check_make") (param i64) (result i64)
+    local.get 0 call $make_v128 i64x2.extract_lane 1)
+  (func (export "check_make_indirect") (param i64 i32) (result i64)
+    local.get 0 local.get 1
+    call_indirect (type $i64_to_vector) i64x2.extract_lane 1))

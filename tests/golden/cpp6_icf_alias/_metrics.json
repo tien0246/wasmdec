@@ -1,0 +1,56 @@
+{
+ "fixture": "cpp6_icf_alias.wasm",
+ "wall_ms": 391,
+ "timeout": false,
+ "functions": {
+  "alpha": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "beta": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "gamma_unique": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "cpp6_call_folded": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "cpp6_call_unique": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 5,
+  "ok": 5,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

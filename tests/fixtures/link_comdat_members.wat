@@ -1,0 +1,11 @@
+(module
+  (type $tag_type (func (param i32)))
+  (func $member (export "group_func"))
+  (table $table 1 funcref)
+  (global $global i32 (i32.const 7))
+  (tag $tag (type $tag_type))
+  (data "g")
+  (export "group_table" (table $table))
+  (export "group_global" (global $global))
+  (export "group_tag" (tag $tag))
+)

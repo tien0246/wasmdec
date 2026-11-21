@@ -1,0 +1,6 @@
+# Fixed-memory SIMD lane lowering (verify_wasmhex_fixed_memory_lane.py).
+contains: MK_FP(
+not_contains: __builtin_trap
+not_contains: wasm_
+not_contains: JUMPOUT(
+status: OK

@@ -1,0 +1,24 @@
+{
+ "fixture": "bt_nested.wasm",
+ "wall_ms": 688,
+ "timeout": false,
+ "functions": {
+  "dispatch": {
+   "status": "OK",
+   "ms": 5,
+   "lines": 26,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 1,
+  "ok": 1,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "fixture": "wasmhex_fixed_memory_widen.wasm",
+ "wall_ms": 428,
+ "timeout": false,
+ "functions": {
+  "load8x8_s": {
+   "status": "OK",
+   "ms": 14,
+   "lines": 24,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load8x8_u": {
+   "status": "OK",
+   "ms": 11,
+   "lines": 24,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load16x4_s": {
+   "status": "OK",
+   "ms": 5,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load16x4_u": {
+   "status": "OK",
+   "ms": 4,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load32x2_s": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load32x2_u": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "init": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 7,
+  "ok": 7,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

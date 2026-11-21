@@ -1,0 +1,450 @@
+# Spec-validity oracle for tests/fixtures/*.wasm (consumed by core_tests).
+# Columns: fixture <TAB> valid|invalid|unknown <TAB> source/note
+# Source: WebAssembly.validate() in Node.js v22.22.2 (V8), default features.
+# 'unknown' = the engine cannot judge (component binaries, table64 limit flags, memory64 implementation limit).
+a5_unsupported_opcode	valid	node v26 (c4 wiring; A5 unsupported-state fixture)
+a6_local_assigned_ok	valid	node v26 (c4 wiring)
+a6_local_unassigned_bad	invalid	node v26 (c4 wiring; uninitialized non-defaultable local)
+a7_local_count_bomb	invalid	node v26 (c4 wiring; engine local-count limit, spec allows up to 2^32)
+a7_local_count_cap	invalid	node v26 (c4 wiring; engine local-count limit, spec allows up to 2^32)
+a8_table64_const_index	valid	node v26 (c4 wiring)
+add	valid	node
+backend_segment_indirect_finite_diff	valid	node
+backend_segment_indirect_finite_same	valid	node
+backend_segment_indirect_loop	valid	node
+backend_segment_indirect_table_mutation	valid	node
+backend_segment_indirect_unknown	valid	node
+backend_segment_repeated_drop	valid	node
+backend_segment_start	valid	node
+backend_segment_start_export	valid	node
+backend_segment_start_indirect	valid	node
+br_on_null	valid	node
+br_table	valid	node
+build_wasmhex_typed_ref_unsupported_gc	valid	node
+call_ref_direct	valid	node
+call_ref_global_pure	valid	node
+call_ref_join_targets	valid	node
+call_ref_subtype	valid	node
+cframe_fallback_reason	valid	node v26 (M1-S3 pinned: C-frame diagnostic + sp-global degrade, SEMANTICS 5b)
+component_f5	unknown	component binary
+component_f5_nested	unknown	component binary
+component_f5_out_of_order	unknown	component binary
+component_f5_unsupported	unknown	component binary
+component_instance_type	unknown	component binary
+component_instances	unknown	component binary
+component_nested	unknown	component binary
+cpp6_icf_alias	valid	node v26 (wired K2-p1 follow-up: fixture added mid-round)
+ctree_effects	valid	node
+differential_o0	valid	node
+differential_o2	valid	node
+direct_tuple_20	valid	node
+dwarf_ext	valid	node
+dwarf_ext.debug	valid	node
+dwarf_full	valid	node
+dwarf_noname	valid	node
+f5_call_unwind	valid	node
+f5_call_unwind_unsupported	valid	node
+f5_legacy_delegate	valid	node
+f5_legacy_delegate1	valid	node
+f5_legacy_delegate2	valid	node
+f5_legacy_eh	valid	node
+f5_legacy_eh_unsupported	valid	node
+f5_legacy_rethrow	valid	node
+f5_legacy_rethrow1	valid	node
+f5_legacy_rethrow1_catch_all	valid	node
+f5_legacy_rethrow2	valid	node
+f5_legacy_rethrow_unsupported	valid	node
+f5_legacy_throw_ref	valid	node
+f5_legacy_trap_eh	valid	node
+f5_try_table_depth1	valid	node
+f5_try_table_depth2	valid	node
+f5_try_table_multi_catch	valid	node
+f5_try_table_throw	valid	node
+f5_try_table_unsupported	valid	node
+feature_bulk_table	valid	node
+feature_call_indirect_canonical	valid	node
+feature_call_indirect_overlong	valid	node
+feature_call_indirect_type_overlong	valid	node
+feature_exception_catch_all	valid	node
+feature_exception_delegate	valid	node
+feature_extended_const_body	valid	node
+feature_extended_const_initializer	valid	node
+feature_funcref_value	valid	node
+feature_multiple_tables	valid	node
+feature_mutable_global	valid	node
+feature_mvp_funcref_table	valid	node
+feature_opcode_immediates	valid	node
+feature_passive_segments	valid	node
+feature_reference_body	valid	node
+feature_shared_memory	valid	node
+feature_sign_extension	valid	node
+float_abi	valid	node
+float_mvp_scalar	valid	node
+float_nearest_semantics	valid	node
+float_select	valid	node
+float_sign	valid	node
+float_simd	valid	node
+float_trunc_sat	valid	node
+g3_wb_global_store_before_call	valid	node v26 wasm-validate 1.0.42 (G3/G4: post-write-barrier global store before Go call stops at end)
+g3_wb_local_ptr_store_before_call	valid	node v26 wasm-validate 1.0.42 (G3/G4: post-write-barrier local-ptr store before Go call stops at end)
+g6_runtime_pc_f_loop	valid	node v26 wasm-validate 1.0.42 (G6-runtime: 41-byte wasm_pc_f_loop trampoline indirect call)
+g6_runtime_systemstack	valid	node v26 wasm-validate 1.0.42 (G6-runtime: runtime.systemstack fast-path indirect call + return)
+g6_wb_1slot	valid	node v26 wasm-validate 1.0.42 (G6: 1-slot Go write-barrier ctree collapse + near-miss skip)
+g6_wb_2slot	valid	node v26 wasm-validate 1.0.42 (G6: 2-slot Go write-barrier ctree collapse + near-miss skip)
+g6_wb_structural_guard	valid	node v26 wasm-validate 1.0.42 (G6: stripped-module wb collapse via structural terminal-noreturn guard proof + loop-helper near-miss)
+i16x8_sat	valid	node
+i16x8_slice	valid	node
+i31_gc	valid	node
+i32_load_store	valid	node
+i32_shift_rotate	valid	node
+i32x4_minmax	valid	node
+i64_div_rem	valid	node
+i64_shift	valid	node
+i64x2_compare	valid	node
+i8x16_slice	valid	node
+if_else	valid	node
+link_comdat_active_data	valid	node
+link_comdat_choice_a	valid	node
+link_comdat_choice_b	valid	node
+link_comdat_choice_caller	valid	node
+link_comdat_data_a	valid	node
+link_comdat_data_b	valid	node
+link_comdat_data_caller	valid	node
+link_comdat_data_mixed	valid	node
+link_comdat_data_multi_caller	valid	node
+link_comdat_data_multi_loser	valid	node
+link_comdat_data_multi_winner	valid	node
+link_comdat_data_winner	valid	node
+link_comdat_duplicate	valid	node
+link_comdat_global_immutable_mixed	valid	node
+link_comdat_global_importer	valid	node
+link_comdat_global_mixed	valid	node
+link_comdat_global_winner	valid	node
+link_comdat_members	valid	node
+link_comdat_multi_caller	valid	node
+link_comdat_multi_loser	valid	node
+link_comdat_multi_prefix	valid	node
+link_comdat_multi_table_active	valid	node
+link_comdat_multi_table_bad_limits	valid	node
+link_comdat_multi_table_bad_type	valid	node
+link_comdat_multi_table_loser	valid	node
+link_comdat_multi_table_prefix	valid	node
+link_comdat_multi_table_tag	valid	node
+link_comdat_multi_table_winner	valid	node
+link_comdat_multi_tag_bad_signature	valid	node
+link_comdat_multi_tag_eh_winner	valid	node
+link_comdat_multi_tag_legacy_loser	valid	node
+link_comdat_multi_tag_loser	valid	node
+link_comdat_multi_tag_prefix	valid	node
+link_comdat_multi_tag_try_table_loser	valid	node
+link_comdat_multi_tag_winner	valid	node
+link_comdat_multi_winner	valid	node
+link_comdat_passive_mixed	valid	node
+link_comdat_passive_prefix	valid	node
+link_comdat_passive_winner	valid	node
+link_comdat_prefix	valid	node
+link_comdat_table_active_mixed	valid	node
+link_comdat_table_importer	valid	node
+link_comdat_table_mixed	valid	node
+link_comdat_table_prefix	valid	node
+link_comdat_table_winner	valid	node
+link_comdat_tag_importer	valid	node
+link_comdat_tag_mismatch	valid	node
+link_comdat_tag_mixed	valid	node
+link_comdat_tag_prefix	valid	node
+link_comdat_tag_winner	valid	node
+link_comdat_unsafe_loser	valid	node
+link_ctor_a	valid	node
+link_ctor_b	valid	node
+link_ctor_prefix	valid	node
+link_ctor_start	valid	node
+link_expr_declarative	valid	node
+link_expr_externref_a	valid	node
+link_expr_externref_b	valid	node
+link_expr_externref_defined	valid	node
+link_expr_funcref_a	valid	node
+link_expr_funcref_b	valid	node
+link_expr_global_element	valid	node
+link_expr_global_prefix	valid	node
+link_expr_table_def_funcref	valid	node
+link_expr_table_import_externref	valid	node
+link_expr_table_import_funcref_min3	valid	node
+link_gc_array_defined	valid	node
+link_gc_array_fixed_integer_chain_count_unsupported	valid	node
+link_gc_array_fixed_integer_chain_too_long	valid	node
+link_gc_array_global	valid	node
+link_gc_array_import	valid	node
+link_gc_array_integer_chain_elements	valid	node
+link_gc_array_integer_chain_too_long	valid	node
+link_gc_array_mismatch	valid	node
+link_gc_array_new_default_element	valid	node
+link_gc_array_new_element	valid	node
+link_gc_array_new_fixed_computed_count_unsupported	valid	node
+link_gc_array_new_fixed_element	valid	node
+link_gc_array_new_fixed_i32_add_element	valid	node
+link_gc_array_new_fixed_i64_mul_element	valid	node
+link_gc_array_new_i32_add_element	valid	node
+link_gc_array_new_i32_sub_element	valid	node
+link_gc_array_ref_field_unsupported	valid	node
+link_gc_array_ref_fields	valid	node
+link_gc_element_type_prefix	valid	node
+link_gc_global_prefix	valid	node
+link_gc_i31_element	valid	node
+link_gc_mutable_global_element	invalid	node
+link_gc_nonnull_element	valid	node
+link_gc_recursive	valid	node
+link_gc_recursive_table_defined	valid	node
+link_gc_recursive_table_import	valid	node
+link_gc_struct_defined	valid	node
+link_gc_struct_global	valid	node
+link_gc_struct_global_mismatch	valid	node
+link_gc_struct_import	valid	node
+link_gc_struct_mismatch	valid	node
+link_gc_struct_new_add_element	valid	node
+link_gc_struct_new_binary_chain	valid	node
+link_gc_struct_new_binary_first_element	valid	node
+link_gc_struct_new_binary_mixed_width	invalid	node
+link_gc_struct_new_binary_scalar_mismatch	invalid	node
+link_gc_struct_new_binary_second_element	valid	node
+link_gc_struct_new_binary_second_mismatch	invalid	node
+link_gc_struct_new_default_element	valid	node
+link_gc_struct_new_element	valid	node
+link_gc_struct_new_sub_element	valid	node
+link_gc_struct_new_two_computed_chain	valid	node
+link_gc_struct_new_two_computed_element	valid	node
+link_gc_struct_new_two_computed_width_mismatch	invalid	node
+link_gc_struct_parent_defined	valid	node
+link_gc_struct_ref_func_element	valid	node
+link_gc_struct_ref_func_field_unsupported	valid	node
+link_globals_a.o	valid	node
+link_globals_b.o	valid	node
+link_globals_data.o	valid	node
+link_globals_init_resolves.o	valid	node
+link_globals_mismatch.o	valid	node
+link_globals_prefix.o	valid	node
+link_globals_ref.o	valid	node
+link_globals_scalars.o	valid	node
+link_memory_reloc.o	valid	node
+link_memory_reloc_prefix.o	valid	node
+link_memory_reloc_wrapper.o	valid	node
+link_multi_memory_a.o	valid	node
+link_multi_memory_b.o	valid	node
+link_multi_memory_passive.o	valid	node
+link_multi_table_a.o	valid	node
+link_multi_table_b.o	valid	node
+link_reference_globals_a.o	valid	node
+link_reference_globals_b.o	valid	node
+link_reference_globals_defs.o	valid	node
+link_reference_globals_function_prefix.o	valid	node
+link_reference_globals_function_target.o	valid	node
+link_reference_globals_get.o	valid	node
+link_reference_globals_mismatch.o	valid	node
+link_reference_globals_typed.o	valid	node
+link_single_memory_defined.o	valid	node
+link_single_memory_import.o	valid	node
+link_single_table_defined.o	valid	node
+link_single_table_import.o	valid	node
+link_table64_defined	unknown	engine lacks table64 limit flags
+link_table64_import	unknown	engine lacks table64 limit flags
+link_table64_reloc.o	unknown	engine lacks table64 limit flags
+link_table_reloc.o	valid	node
+link_table_reloc_wrapper.o	valid	node
+link_table_slot_ambiguous	valid	node
+link_tag_defined	valid	node
+link_tag_import_a	valid	node
+link_tag_import_b	valid	node
+link_tag_mismatch	valid	node
+link_tag_throw	valid	node
+link_tag_try_table	valid	node
+link_typed_global_definition_mismatch	valid	node
+link_typed_global_export	valid	node
+link_typed_global_import	valid	node
+link_typed_global_import_b	valid	node
+link_typed_table_defined	valid	node
+link_typed_table_global	valid	node
+link_typed_table_import	valid	node
+link_typed_table_mismatch	valid	node
+link_typed_table_nonnull_a	valid	node
+link_typed_table_nonnull_b	valid	node
+link_typed_table_ref_func	valid	node
+link_typed_table_ref_func_prefix	valid	node
+loop	valid	node
+memory32_widths	valid	node
+memory64	valid	node
+multi_memory	valid	node
+mutual_recursion	valid	node
+native_i64_f5	valid	node
+native_indirect_tuple_sret_7_words	valid	node
+native_multi_value	valid	node
+native_multi_value_2x_i32	valid	node
+native_tuple_sret	valid	node
+native_tuple_sret_7_words	valid	node
+native_tuple_sret_i32	valid	node
+native_v128_abi	valid	node
+native_v128_load_splat	valid	node
+native_v128_load_zero	valid	node
+native_v128_memory	valid	node
+native_v128_returns	valid	node
+native_v128_sret	valid	node
+p01_and_mask_in_data	valid	node v26 (P0-1: mask constant stays a number)
+p01_import_str_addr	valid	node v26 (P0-1: import string arg stays a number)
+p02_bss_access	valid	node v26 (P0-2: BSS access resolves into the linear-memory segment)
+p02_const_addr_data	valid	node v26 (P0-2 guard: constant load/store address keeps its data symbol)
+p05_go_refresh_foreign_set	valid	node v26 wasm-validate 1.0.42 (P0-5: SP-refresh pair consumed by EA+index)
+p06_morestack_names	valid	node v26 wasm-validate 1.0.42 (P0-6: pclntab-named morestack callee gate)
+ref_as_non_null	valid	node
+ref_cast_gc	valid	node
+ref_eq	valid	node
+ref_is_null	valid	node
+ref_test_gc	valid	node
+relaxed_simd	valid	node
+return_call	valid	node
+return_call_float_targets	valid	node
+scalar_refs_abi	valid	node
+scalar_select	valid	node
+simd_bit_arith	valid	node
+simd_convert_int_float	valid	node
+simd_extend	valid	node
+simd_float_compare	valid	node
+simd_float_convert	valid	node
+simd_float_minmax	valid	node
+simd_float_unary	valid	node
+simd_float_unary_raw	valid	node
+simd_integer_more	valid	node
+simd_lane_bounds_invalid	invalid	node v26 (V1: per-shape lane bounds 16/8/4/2, shuffle 32, align>natural, empty spec slots 0x9A/0xA2/0xE2)
+simd_lane_bounds_valid	valid	node v26 (V1: green boundary lane==bound-1 every shape, shuffle 31, align==natural)
+simd_lane_ops	valid	node
+simd_memory	valid	node
+simd_narrow	valid	node
+simd_shift	valid	node
+simd_swizzle	valid	node
+simd_trunc_sat	valid	node
+simd_widening_loads	valid	node
+trunc_sat	valid	node
+typed_gc_identity	valid	node
+v128_branch	valid	node
+v128_function_abi	valid	node
+v128_locals	valid	node
+v128_mixed_width	valid	node
+v128_select	valid	node
+v1_name_over_export	valid	node v27 (V1: name section outranks the export name)
+wasmhex_atomics	valid	node
+wasmhex_atomics_invalid_stack	invalid	node
+wasmhex_atomics_memory64	valid	node
+wasmhex_atomics_unshared	valid	node
+wasmhex_block_params_gc_branches	valid	node
+wasmhex_branch_values	valid	node
+wasmhex_call_ref	valid	node
+wasmhex_call_ref_dynamic	valid	node
+wasmhex_call_ref_encoded_mismatch	invalid	node
+wasmhex_call_ref_finite	valid	node
+wasmhex_call_ref_import	valid	node
+wasmhex_call_ref_import_join	valid	node
+wasmhex_call_ref_join	valid	node
+wasmhex_call_ref_multi	valid	node
+wasmhex_call_ref_nonnumeric_import_join	valid	node
+wasmhex_call_ref_same_join	valid	node
+wasmhex_call_ref_subtype_join	valid	node
+wasmhex_call_ref_unknown_join	valid	node
+wasmhex_calls	valid	node
+wasmhex_calls_multi	valid	node
+wasmhex_control_flow	valid	node
+wasmhex_explicit_return	valid	node
+wasmhex_fixed_memory64_exact	valid	node
+wasmhex_fixed_memory64_exported	valid	node
+wasmhex_fixed_memory64_full	unknown	engine memory64 implementation limit
+wasmhex_fixed_memory64_grow	valid	node
+wasmhex_fixed_memory64_growable_shared	valid	node
+wasmhex_fixed_memory64_imported	valid	node
+wasmhex_fixed_memory64_oversize	invalid	node
+wasmhex_fixed_memory64_private	valid	node
+wasmhex_fixed_memory64_scalar	valid	node
+wasmhex_fixed_memory64_shared	valid	node
+wasmhex_fixed_memory_exact	valid	node
+wasmhex_fixed_memory_exported	valid	node
+wasmhex_fixed_memory_grow	valid	node
+wasmhex_fixed_memory_imported	valid	node
+wasmhex_fixed_memory_lane	valid	node
+wasmhex_fixed_memory_lane_invalid	invalid	node
+wasmhex_fixed_memory_memory64	valid	node
+wasmhex_fixed_memory_scalar	valid	node
+wasmhex_fixed_memory_scalar_zero	valid	node
+wasmhex_fixed_memory_shared	valid	node
+wasmhex_fixed_memory_v128	valid	node
+wasmhex_fixed_memory_widen	valid	node
+wasmhex_fixed_memory_zero	valid	node
+wasmhex_fixed_memory_zero_splat	valid	node
+wasmhex_float_helpers	valid	node
+wasmhex_float_raw_edges	valid	node
+wasmhex_float_unary_raw	valid	node
+wasmhex_gc_branches	valid	node
+wasmhex_global_imports	valid	node
+wasmhex_globals	valid	node
+wasmhex_import_names	valid	node
+wasmhex_indirect_dead_table_write	valid	node
+wasmhex_indirect_dense	valid	node
+wasmhex_indirect_finite_targets	unknown	engine lacks table64 limit flags
+wasmhex_indirect_global_indices	unknown	engine lacks table64 limit flags
+wasmhex_indirect_mutable_table	valid	node
+wasmhex_indirect_passive_segment	valid	node
+wasmhex_indirect_sparse_dispatch	valid	node
+wasmhex_indirect_static	valid	node
+wasmhex_indirect_table_copy	valid	node
+wasmhex_indirect_table_copy_hidden_writer	valid	node
+wasmhex_indirect_table_copy_reject	valid	node
+wasmhex_indirect_table_join	valid	node
+wasmhex_indirect_table_mutation	valid	node
+wasmhex_indirect_table_set	valid	node
+wasmhex_indirect_table_set_reject	valid	node
+wasmhex_indirect_traps	valid	node
+wasmhex_indirect_unknown_element	valid	node
+wasmhex_indirect_value_ssa	valid	node
+wasmhex_loop_transfers	valid	node
+wasmhex_memory64	valid	node
+wasmhex_memory64_bulk	valid	node
+wasmhex_memory64_init	valid	node
+wasmhex_memory64_size_fixed	valid	node
+wasmhex_memory64_size_grow	valid	node
+wasmhex_memory64_v128	valid	node
+wasmhex_memory_bulk	valid	node
+wasmhex_memory_init	valid	node
+wasmhex_memory_size_fixed	valid	node
+wasmhex_memory_size_grow	valid	node
+wasmhex_multi_branch_values	valid	node
+wasmhex_ref_eq	valid	node
+wasmhex_ref_imports	valid	node
+wasmhex_reference_ops	valid	node
+wasmhex_return_call_indirect	valid	node
+wasmhex_return_call_indirect_dynamic_dense	valid	node
+wasmhex_return_call_indirect_dynamic_sparse	valid	node
+wasmhex_return_call_indirect_mixed_register_unsupported	valid	node
+wasmhex_select	valid	node
+wasmhex_simd_bounds	valid	node
+wasmhex_simd_bounds_exported	valid	node
+wasmhex_simd_bounds_grow	valid	node
+wasmhex_simd_bounds_imported	valid	node
+wasmhex_simd_bounds_shared	valid	node
+wasmhex_sparse_large_indirect	valid	node
+wasmhex_table_size_direct	unknown	engine lacks table64 limit flags
+wasmhex_table_size_fixed	valid	node
+wasmhex_table_size_growable	valid	node
+wasmhex_table_size_unbounded	valid	node
+wasmhex_typed_ref_compatible	valid	node
+wasmhex_typed_ref_mismatch	invalid	node
+wasmhex_typed_ref_runtime_compatible	valid	node
+wasmhex_typed_ref_unsupported_gc	valid	node
+wasmhex_unreachable	valid	node
+m0a_go_result_slot	valid	wat2wasm 1.0.42 (M0/3.1: Go result-slot fixture — the fmt.Sprintf shape, caller reads the result window)
+m0a_memfill_repr	valid	wat2wasm 1.0.42 (M0/3.3: memory.fill/copy render through the load/store address representation)
+m1d1_memory_globals_brtable	valid	wat2wasm 1.0.42 (M1-D1 K5 probe: memory+globals+br_table composite — globals<4GiB/flat addressing pin)
+m1d1_wide_db_constructs	valid	wat2wasm 1.0.42 (M1-D1 K5 probe: block/local/global/param/const bisect on wide DB)
+m1d1_globals_types	valid	wat2wasm 1.0.42 (M1-D1 K5 probe: typed globals i32/i64/f64 — gvar>4GiB MERR_ARCH pin)
+m1d1_no_memory	valid	wat2wasm 1.0.42 (M1-D1 K5 probe: no-memory module — 32-bit DB / legacy 0x1000 base pin)
+m1d1_control_flow_no_memory	valid	wat2wasm 1.0.42 (M1-D1 K5 probe: control flow without memory)
+m1d1_memory_nodata	valid	wat2wasm 1.0.42 (M1-D1 K5 probe: memory without data segments — bitness one-source pin)
+go_loop	valid	go1.27.4 GOOS=js GOARCH=wasm (G12 sourced Go fixture: counting loop; rebuild via tests/go/build.sh, sha256 in tests/go/README.md)
+go_slice	valid	go1.27.4 GOOS=js GOARCH=wasm (G12 sourced Go fixture: []int32 loop + len + append/growslice)
+go_map	valid	go1.27.4 GOOS=js GOARCH=wasm (G12 sourced Go fixture: map[string]int32 access + assign + len(map))
+go_iface	valid	go1.27.4 GOOS=js GOARCH=wasm (G12 sourced Go fixture: interface itab dispatch, two concrete types)
+go_closure	valid	go1.27.4 GOOS=js GOARCH=wasm (G12 sourced Go fixture: closure capture, funcval call)
+h3_dref_walk	valid	wat2wasm 1.0.42 (H3 dref walk: constant-address load/store proven, dynamic bases rejected)

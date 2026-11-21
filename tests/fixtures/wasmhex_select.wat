@@ -1,0 +1,13 @@
+(module
+  (func (export "select_i32") (param $condition i32) (param $yes i32) (param $no i32) (result i32)
+    local.get $yes local.get $no local.get $condition select)
+  (func (export "select_i64") (param $condition i32) (param $yes i64) (param $no i64) (result i64)
+    local.get $yes local.get $no local.get $condition select)
+  (func (export "select_f32") (param $condition i32) (param $yes f32) (param $no f32) (result f32)
+    local.get $yes local.get $no local.get $condition select)
+  (func (export "select_f64") (param $condition i32) (param $yes f64) (param $no f64) (result f64)
+    local.get $yes local.get $no local.get $condition select)
+  (func (export "select_funcref") (param $condition i32) (param $yes funcref) (param $no funcref) (result funcref)
+    local.get $yes local.get $no local.get $condition select (result funcref))
+  (func (export "select_externref") (param $condition i32) (param $yes externref) (param $no externref) (result externref)
+    local.get $yes local.get $no local.get $condition select (result externref)))

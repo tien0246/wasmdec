@@ -1,0 +1,4 @@
+{
+ "valid": false,
+ "reason": "tests/fixtures/wasmhex_fixed_memory_lane_invalid.wasm:0000039: error: lane index must be less than 16 (got 16)"
+}

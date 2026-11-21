@@ -1,0 +1,4 @@
+{
+ "valid": false,
+ "reason": "tests/fixtures/wasmhex_fixed_memory64_oversize.wasm:0000013: error: initial pages (281474976710657) must be <= (281474976710656)"
+}

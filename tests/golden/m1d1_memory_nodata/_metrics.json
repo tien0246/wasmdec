@@ -1,0 +1,32 @@
+{
+ "fixture": "m1d1_memory_nodata.wasm",
+ "wall_ms": 382,
+ "timeout": false,
+ "functions": {
+  "brt2": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "brt3": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 2,
+  "ok": 2,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

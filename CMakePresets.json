@@ -1,0 +1,92 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 25, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/preset",
+      "cacheVariables": {
+        "IDASDK": "$env{IDASDK}",
+        "WASMHEX_NATIVE": "ON"
+      }
+    },
+    {
+      "name": "macos-debug",
+      "inherits": "base",
+      "displayName": "wasmdec native + tests + runner (macOS, debug)",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" },
+      "condition": {
+        "type": "equals", "lhs": "${hostSystemName}", "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "macos-release",
+      "inherits": "base",
+      "displayName": "wasmdec native + tests + runner (macOS, release)",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" },
+      "condition": {
+        "type": "equals", "lhs": "${hostSystemName}", "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "macos-asan",
+      "inherits": "base",
+      "displayName": "wasmdec native + runner under AddressSanitizer (asan-smoke gate)",
+      "binaryDir": "${sourceDir}/build/asan",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "WASMHEX_ASAN": "ON"
+      },
+      "condition": {
+        "type": "equals", "lhs": "${hostSystemName}", "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "core-tests",
+      "displayName": "pure C++ core unit tests only (no IDA SDK)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/core_tests",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "WASMHEX_NATIVE": "OFF"
+      }
+    },
+    {
+      "name": "golden-runner",
+      "displayName": "C1 golden runner only (plain C++17)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/golden_runner",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "WASMHEX_NATIVE": "OFF"
+      }
+    },
+    {
+      "name": "fixtures",
+      "displayName": ".wat -> .wasm fixture regeneration (wat2wasm)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/fixtures",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "WASMHEX_NATIVE": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "macos-debug", "configurePreset": "macos-debug", "jobs": 8 },
+    { "name": "macos-release", "configurePreset": "macos-release", "jobs": 8 },
+    { "name": "macos-asan", "configurePreset": "macos-asan", "jobs": 8 },
+    { "name": "macos-asan-smoke", "configurePreset": "macos-asan",
+      "jobs": 1, "targets": ["asan-smoke"] },
+    { "name": "core-tests", "configurePreset": "core-tests", "jobs": 8 },
+    { "name": "core-tests-run", "configurePreset": "core-tests",
+      "jobs": 1, "targets": ["test"] },
+    { "name": "golden-runner", "configurePreset": "golden-runner", "jobs": 8 },
+    { "name": "fixtures", "configurePreset": "fixtures", "jobs": 8,
+      "targets": ["fixtures"] },
+    { "name": "install-user", "configurePreset": "macos-release",
+      "jobs": 8, "targets": ["install"] }
+  ]
+}

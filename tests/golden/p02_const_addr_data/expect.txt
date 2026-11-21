@@ -1,0 +1,8 @@
+# P0-2 guard: a constant address inside the initialized data span keeps a
+# direct data-symbol reference (the load/store address path); it must not
+# degrade to a raw number while bytes exist at the address.
+contains: unk_400
+not_contains: MK_FP
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

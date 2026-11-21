@@ -1,0 +1,64 @@
+{
+ "fixture": "wasmhex_select.wasm",
+ "wall_ms": 378,
+ "timeout": false,
+ "functions": {
+  "select_i32": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "select_i64": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 15,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "select_f32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "select_f64": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "select_funcref": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "select_externref": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 6,
+  "ok": 6,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

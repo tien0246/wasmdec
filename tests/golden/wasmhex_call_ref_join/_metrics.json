@@ -1,0 +1,40 @@
+{
+ "fixture": "wasmhex_call_ref_join.wasm",
+ "wall_ms": 373,
+ "timeout": false,
+ "functions": {
+  "target0": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "target1": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "call_ref_join": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x1009"
+  }
+ },
+ "totals": {
+  "functions": 3,
+  "ok": 2,
+  "interr": 1,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 3
+ }
+}

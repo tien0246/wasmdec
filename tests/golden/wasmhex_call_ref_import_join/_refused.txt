@@ -1,0 +1,4 @@
+# T0-era refused-marker: functions below currently FAIL F5; their .c files are intentionally absent (no stale copies).
+# dumped: 2026-11-20T23:58:25
+dispatch_import_join	INTERR	code=-1 errea=0x1006
+dispatch_import_tail_join	INTERR	code=-1 errea=0x101b

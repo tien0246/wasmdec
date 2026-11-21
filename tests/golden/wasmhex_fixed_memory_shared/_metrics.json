@@ -1,0 +1,40 @@
+{
+ "fixture": "wasmhex_fixed_memory_shared.wasm",
+ "wall_ms": 402,
+ "timeout": false,
+ "functions": {
+  "scalar": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-31 errea=0x100000002"
+  },
+  "load": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-31 errea=0x100000008"
+  },
+  "widen": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-31 errea=0x100000012"
+  }
+ },
+ "totals": {
+  "functions": 3,
+  "ok": 0,
+  "interr": 3,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 3
+ }
+}

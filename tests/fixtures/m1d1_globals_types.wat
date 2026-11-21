@@ -1,0 +1,16 @@
+(module
+  (global $g32 (mut i32) (i32.const 1024))
+  (global $g64 (mut i64) (i64.const 77))
+  (global $f64 (mut f64) (f64.const 1.5))
+  (memory 1)
+  (data (i32.const 0) "hi")
+  (func (export "get_g64") (result i64)
+    global.get $g64)
+  (func (export "set_g64") (param i64)
+    local.get 0
+    global.set $g64)
+  (func (export "get_f64") (result f64)
+    global.get $f64)
+  (func (export "get_g32") (result i32)
+    global.get $g32)
+)

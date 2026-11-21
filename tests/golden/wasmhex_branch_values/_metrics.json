@@ -1,0 +1,80 @@
+{
+ "fixture": "wasmhex_branch_values.wasm",
+ "wall_ms": 378,
+ "timeout": false,
+ "functions": {
+  "wasm_if_result": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_if_result_prefix": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_br_if_result": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_br_result": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_br_table_result": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_i64_br_if_result": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 13,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_f32_if_result": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_externref_br_if_result": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 8,
+  "ok": 8,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

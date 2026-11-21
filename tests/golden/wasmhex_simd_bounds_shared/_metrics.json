@@ -1,0 +1,24 @@
+{
+ "fixture": "wasmhex_simd_bounds_shared.wasm",
+ "wall_ms": 554,
+ "timeout": false,
+ "functions": {
+  "copy": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-31 errea=0x100000004"
+  }
+ },
+ "totals": {
+  "functions": 1,
+  "ok": 0,
+  "interr": 1,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 1
+ }
+}

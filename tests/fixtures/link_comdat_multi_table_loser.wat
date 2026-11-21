@@ -1,0 +1,11 @@
+(module
+  (table $table_a 1 funcref)
+  (table $table_b 2 externref)
+  (global $keep i32 (i32.const 7))
+  (func (export "size_a") (result i32) (table.size $table_a))
+  (func (export "grow_a") (result i32)
+    (ref.null func)
+    (i32.const 1)
+    (table.grow $table_a))
+  (func (export "size_b") (result i32) (table.size $table_b))
+)

@@ -1,0 +1,7 @@
+# Dense dynamic return_call_indirect lowering (verify_wasmhex_return_call_indirect_dynamic_dense.py).
+contains: return add_one(value);
+contains: return double(value);
+contains: wasm_trap_call_indirect_bounds()
+not_contains: wasm_call_indirect_table
+not_contains: JUMPOUT(
+status: OK

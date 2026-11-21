@@ -1,0 +1,48 @@
+{
+ "fixture": "wasmhex_call_ref_finite.wasm",
+ "wall_ms": 404,
+ "timeout": false,
+ "functions": {
+  "target0": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "target1": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "dispatch": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x1009"
+  },
+  "dispatch_tail": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x101e"
+  }
+ },
+ "totals": {
+  "functions": 4,
+  "ok": 2,
+  "interr": 2,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 8
+ }
+}

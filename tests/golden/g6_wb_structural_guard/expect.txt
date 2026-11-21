@@ -1,0 +1,18 @@
+# G6: stripped-module write-barrier collapse via the structural terminal-noreturn
+# guard proof (no pclntab — synthetic wasm_func_N names only).
+# wb_struct_collapsed: positive — collapses to the duplicated post-if guard +
+# `*dst = val; // go: write barrier`.
+contains: go: write barrier
+# The collapsed function keeps exactly one visible guard call to the
+# structurally-proven terminal helper (wasm_func_3).
+contains: wasm_func_3(0)
+# The positive site no longer mentions the bytecode-proven gcWriteBarrier2
+# wrapper — its only appearance is the uncollapsed near-miss below.
+# wb_struct_loop_near_miss: near-miss — the guard callee (wasm_func_4) has a
+# backward const-JMP edge, fails the terminal-noreturn proof, and the whole
+# write-barrier block stays visible (the wrapper call remains referenced).
+regex: wasm_func_2\(\)
+# wasm_func_3 itself (terminal helper) is refused by F5 like the g6_cold_tail
+# helpers — its golden entry is the _refused marker.
+not_contains: JUMPOUT(
+status: OK

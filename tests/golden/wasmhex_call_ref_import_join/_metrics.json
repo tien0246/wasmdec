@@ -1,0 +1,40 @@
+{
+ "fixture": "wasmhex_call_ref_import_join.wasm",
+ "wall_ms": 394,
+ "timeout": false,
+ "functions": {
+  "defined": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "dispatch_import_join": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x1006"
+  },
+  "dispatch_import_tail_join": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-1 errea=0x101b"
+  }
+ },
+ "totals": {
+  "functions": 3,
+  "ok": 1,
+  "interr": 2,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 10
+ }
+}

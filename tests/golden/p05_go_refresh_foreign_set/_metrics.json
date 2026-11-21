@@ -1,0 +1,56 @@
+{
+ "fixture": "p05_go_refresh_foreign_set.wasm",
+ "wall_ms": 385,
+ "timeout": false,
+ "functions": {
+  "wasm_func_1": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_func_2": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_func_3": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "p05_foreign_set": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "p05_tail": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 5,
+  "ok": 5,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

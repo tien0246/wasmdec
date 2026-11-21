@@ -1,0 +1,246 @@
+ENUM_COUNT 245 TABLE_COUNT 245
+  0 null                                                  0
+  1 unreachable                  unreachable              CF_STOP
+  2 nop                          nop                      0
+  3 drop                         drop                     0
+  4 select                       select                   0
+  5 select_typed                 select_typed             0
+  6 end                          end                      0
+  7 block                        block                    0
+  8 loop                         loop                     0
+  9 if                           if                       CF_JUMP
+ 10 try                          try                      0
+ 11 catch                        catch                    CF_USE1
+ 12 throw                        throw                    CF_USE1|CF_STOP
+ 13 else                         else                     CF_JUMP|CF_STOP
+ 14 br                           br                       CF_USE1|CF_JUMP|CF_STOP
+ 15 br_if                        br_if                    CF_USE1|CF_JUMP
+ 16 br_on_null                   br_on_null               CF_USE1|CF_JUMP
+ 17 br_on_non_null               br_on_non_null           CF_USE1|CF_JUMP
+ 18 br_table                     br_table                 CF_USE1|CF_JUMP|CF_STOP
+ 19 br_case                      br.case                  CF_USE1|CF_JUMP
+ 20 br_default                   br.default               CF_JUMP|CF_STOP
+ 21 branch_edge                  br.edge                  CF_USE1|CF_JUMP|CF_STOP
+ 22 call_dispatch_test           call.case                CF_USE1|CF_JUMP
+ 23 call_dispatch_default        call.bounds              CF_STOP
+ 24 call_dispatch_target         call.target              CF_CALL|CF_STOP
+ 25 call_dispatch_null           call.null                CF_STOP
+ 26 call_dispatch_type           call.type                CF_STOP
+ 27 memory_bounds_check          memory.check             CF_USE1|CF_USE2
+ 28 memory_trap                  memory.trap              CF_STOP
+ 29 return                       return                   CF_STOP
+ 30 local_get                    local.get                0
+ 31 local_set                    local.set                0
+ 32 local_tee                    local.tee                0
+ 33 global_get                   global.get               0
+ 34 global_set                   global.set               0
+ 35 i32_const                    i32.const                0
+ 36 i32_clz                      i32.clz                  0
+ 37 i32_ctz                      i32.ctz                  0
+ 38 i32_popcnt                   i32.popcnt               0
+ 39 i64_clz                      i64.clz                  0
+ 40 i64_ctz                      i64.ctz                  0
+ 41 i64_popcnt                   i64.popcnt               0
+ 42 i32_eqz                      i32.eqz                  0
+ 43 i32_eq                       i32.eq                   0
+ 44 i32_ne                       i32.ne                   0
+ 45 i32_lt_s                     i32.lt_s                 0
+ 46 i32_lt_u                     i32.lt_u                 0
+ 47 i32_gt_s                     i32.gt_s                 0
+ 48 i32_gt_u                     i32.gt_u                 0
+ 49 i32_le_s                     i32.le_s                 0
+ 50 i32_le_u                     i32.le_u                 0
+ 51 i32_ge_s                     i32.ge_s                 0
+ 52 i32_ge_u                     i32.ge_u                 0
+ 53 i64_eqz                      i64.eqz                  0
+ 54 i64_eq                       i64.eq                   0
+ 55 i64_ne                       i64.ne                   0
+ 56 i64_lt_s                     i64.lt_s                 0
+ 57 i64_lt_u                     i64.lt_u                 0
+ 58 i64_gt_s                     i64.gt_s                 0
+ 59 i64_gt_u                     i64.gt_u                 0
+ 60 i64_le_s                     i64.le_s                 0
+ 61 i64_le_u                     i64.le_u                 0
+ 62 i64_ge_s                     i64.ge_s                 0
+ 63 i64_ge_u                     i64.ge_u                 0
+ 64 i64_const                    i64.const                0
+ 65 f32_const                    f32.const                0
+ 66 f64_const                    f64.const                0
+ 67 i32_load                     i32.load                 CF_USE1
+ 68 i64_load                     i64.load                 CF_USE1
+ 69 f32_load                     f32.load                 CF_USE1
+ 70 f64_load                     f64.load                 CF_USE1
+ 71 i32_load8_s                  i32.load8_s              CF_USE1
+ 72 i32_load8_u                  i32.load8_u              CF_USE1
+ 73 i32_load16_s                 i32.load16_s             CF_USE1
+ 74 i32_load16_u                 i32.load16_u             CF_USE1
+ 75 i64_load8_s                  i64.load8_s              CF_USE1
+ 76 i64_load8_u                  i64.load8_u              CF_USE1
+ 77 i64_load16_s                 i64.load16_s             CF_USE1
+ 78 i64_load16_u                 i64.load16_u             CF_USE1
+ 79 i64_load32_s                 i64.load32_s             CF_USE1
+ 80 i64_load32_u                 i64.load32_u             CF_USE1
+ 81 i32_store                    i32.store                CF_USE1
+ 82 i64_store                    i64.store                CF_USE1
+ 83 f32_store                    f32.store                CF_USE1
+ 84 f64_store                    f64.store                CF_USE1
+ 85 i32_store8                   i32.store8               CF_USE1
+ 86 i32_store16                  i32.store16              CF_USE1
+ 87 i64_store8                   i64.store8               CF_USE1
+ 88 i64_store16                  i64.store16              CF_USE1
+ 89 i64_store32                  i64.store32              CF_USE1
+ 90 memory_size                  memory.size              0
+ 91 memory_grow                  memory.grow              0
+ 92 memory_copy                  memory.copy              0
+ 93 memory_fill                  memory.fill              0
+ 94 memory_init                  memory.init              0
+ 95 data_drop                    data.drop                0
+ 96 call                         call                     CF_CALL
+ 97 call_unwind                  call.unwind              CF_CALL|CF_STOP
+ 98 call_indirect                call_indirect            CF_CALL
+ 99 return_call_indirect         return_call_indirect     CF_CALL | CF_STOP
+100 return_call                  return_call              CF_CALL | CF_STOP
+101 call_ref                     call_ref                 CF_CALL
+102 return_call_ref              return_call_ref          CF_CALL | CF_STOP
+103 i32_add                      i32.add                  0
+104 i32_sub                      i32.sub                  0
+105 i32_mul                      i32.mul                  0
+106 i32_div_s                    i32.div_s                0
+107 i32_div_u                    i32.div_u                0
+108 i32_rem_s                    i32.rem_s                0
+109 i32_rem_u                    i32.rem_u                0
+110 i32_shl                      i32.shl                  0
+111 i32_shr_s                    i32.shr_s                0
+112 i32_shr_u                    i32.shr_u                0
+113 i32_rotl                     i32.rotl                 0
+114 i32_rotr                     i32.rotr                 0
+115 i32_and                      i32.and                  0
+116 i32_or                       i32.or                   0
+117 i32_xor                      i32.xor                  0
+118 i64_add                      i64.add                  0
+119 i64_sub                      i64.sub                  0
+120 i64_mul                      i64.mul                  0
+121 i64_div_s                    i64.div_s                0
+122 i64_div_u                    i64.div_u                0
+123 i64_rem_s                    i64.rem_s                0
+124 i64_rem_u                    i64.rem_u                0
+125 i64_and                      i64.and                  0
+126 i64_or                       i64.or                   0
+127 i64_xor                      i64.xor                  0
+128 i64_shl                      i64.shl                  0
+129 i64_shr_s                    i64.shr_s                0
+130 i64_shr_u                    i64.shr_u                0
+131 i64_rotl                     i64.rotl                 0
+132 i64_rotr                     i64.rotr                 0
+133 f32_add                      f32.add                  0
+134 f32_sub                      f32.sub                  0
+135 f32_mul                      f32.mul                  0
+136 f32_div                      f32.div                  0
+137 f64_add                      f64.add                  0
+138 f64_sub                      f64.sub                  0
+139 f64_mul                      f64.mul                  0
+140 f64_div                      f64.div                  0
+141 f32_abs                      f32.abs                  0
+142 f32_neg                      f32.neg                  0
+143 f32_copysign                 f32.copysign             0
+144 f64_abs                      f64.abs                  0
+145 f64_neg                      f64.neg                  0
+146 f64_copysign                 f64.copysign             0
+147 f32_eq                       f32.eq                   0
+148 f32_ne                       f32.ne                   0
+149 f32_lt                       f32.lt                   0
+150 f32_gt                       f32.gt                   0
+151 f32_le                       f32.le                   0
+152 f32_ge                       f32.ge                   0
+153 f64_eq                       f64.eq                   0
+154 f64_ne                       f64.ne                   0
+155 f64_lt                       f64.lt                   0
+156 f64_gt                       f64.gt                   0
+157 f64_le                       f64.le                   0
+158 f64_ge                       f64.ge                   0
+159 f32_ceil                     f32.ceil                 0
+160 f32_floor                    f32.floor                0
+161 f32_trunc                    f32.trunc                0
+162 f32_nearest                  f32.nearest              0
+163 f32_sqrt                     f32.sqrt                 0
+164 f64_ceil                     f64.ceil                 0
+165 f64_floor                    f64.floor                0
+166 f64_trunc                    f64.trunc                0
+167 f64_nearest                  f64.nearest              0
+168 f64_sqrt                     f64.sqrt                 0
+169 f32_min                      f32.min                  0
+170 f32_max                      f32.max                  0
+171 f64_min                      f64.min                  0
+172 f64_max                      f64.max                  0
+173 i32_trunc_sat_f32_s          i32.trunc_sat_f32_s      0
+174 i32_trunc_sat_f32_u          i32.trunc_sat_f32_u      0
+175 i32_trunc_sat_f64_s          i32.trunc_sat_f64_s      0
+176 i32_trunc_sat_f64_u          i32.trunc_sat_f64_u      0
+177 i64_trunc_sat_f32_s          i64.trunc_sat_f32_s      0
+178 i64_trunc_sat_f32_u          i64.trunc_sat_f32_u      0
+179 i64_trunc_sat_f64_s          i64.trunc_sat_f64_s      0
+180 i64_trunc_sat_f64_u          i64.trunc_sat_f64_u      0
+181 i32_trunc_f32_s              i32.trunc_f32_s          0
+182 i32_trunc_f32_u              i32.trunc_f32_u          0
+183 i32_trunc_f64_s              i32.trunc_f64_s          0
+184 i32_trunc_f64_u              i32.trunc_f64_u          0
+185 i64_trunc_f32_s              i64.trunc_f32_s          0
+186 i64_trunc_f32_u              i64.trunc_f32_u          0
+187 i64_trunc_f64_s              i64.trunc_f64_s          0
+188 i64_trunc_f64_u              i64.trunc_f64_u          0
+189 i32_reinterpret_f32          i32.reinterpret_f32      0
+190 i64_reinterpret_f64          i64.reinterpret_f64      0
+191 f32_reinterpret_i32          f32.reinterpret_i32      0
+192 f64_reinterpret_i64          f64.reinterpret_i64      0
+193 f32_convert_i32_s            f32.convert_i32_s        0
+194 f32_convert_i32_u            f32.convert_i32_u        0
+195 f32_convert_i64_s            f32.convert_i64_s        0
+196 f32_convert_i64_u            f32.convert_i64_u        0
+197 f32_demote_f64               f32.demote_f64           0
+198 f64_convert_i32_s            f64.convert_i32_s        0
+199 f64_convert_i32_u            f64.convert_i32_u        0
+200 f64_convert_i64_s            f64.convert_i64_s        0
+201 f64_convert_i64_u            f64.convert_i64_u        0
+202 f64_promote_f32              f64.promote_f32          0
+203 i32_wrap_i64                 i32.wrap_i64             0
+204 i64_extend_i32_s             i64.extend_i32_s         0
+205 i64_extend_i32_u             i64.extend_i32_u         0
+206 i32_extend8_s                i32.extend8_s            0
+207 i32_extend16_s               i32.extend16_s           0
+208 i64_extend8_s                i64.extend8_s            0
+209 i64_extend16_s               i64.extend16_s           0
+210 i64_extend32_s               i64.extend32_s           0
+211 ref_null                     ref.null                 CF_USE1
+212 ref_is_null                  ref.is_null              0
+213 ref_func                     ref.func                 CF_USE1
+214 ref_as_non_null              ref.as_non_null          0
+215 v128_load                    v128.load                CF_USE1
+216 v128_store                   v128.store               CF_USE1
+217 v128_load32_zero             v128.load32_zero         CF_USE1
+218 v128_load64_zero             v128.load64_zero         CF_USE1
+219 v128_load8_splat             v128.load8_splat         CF_USE1
+220 v128_load16_splat            v128.load16_splat        CF_USE1
+221 v128_load32_splat            v128.load32_splat        CF_USE1
+222 v128_load64_splat            v128.load64_splat        CF_USE1
+223 atomic                       atomic                   0
+224 ref_eq                       ref.eq                   0
+225 ref_i31                      ref.i31                  0
+226 i31_get_s                    i31.get_s                0
+227 i31_get_u                    i31.get_u                0
+228 v128_load8_lane              v128.load8_lane          CF_USE1|CF_USE2
+229 v128_load16_lane             v128.load16_lane         CF_USE1|CF_USE2
+230 v128_load32_lane             v128.load32_lane         CF_USE1|CF_USE2
+231 v128_load64_lane             v128.load64_lane         CF_USE1|CF_USE2
+232 v128_store8_lane             v128.store8_lane         CF_USE1|CF_USE2
+233 v128_store16_lane            v128.store16_lane        CF_USE1|CF_USE2
+234 v128_store32_lane            v128.store32_lane        CF_USE1|CF_USE2
+235 v128_store64_lane            v128.store64_lane        CF_USE1|CF_USE2
+236 v128_load8x8_s               v128.load8x8_s           CF_USE1
+237 v128_load8x8_u               v128.load8x8_u           CF_USE1
+238 v128_load16x4_s              v128.load16x4_s          CF_USE1
+239 v128_load16x4_u              v128.load16x4_u          CF_USE1
+240 v128_load32x2_s              v128.load32x2_s          CF_USE1
+241 v128_load32x2_u              v128.load32x2_u          CF_USE1
+242 table_size                   table.size               CF_USE1
+243 call_dispatch_bounds         call.check_bounds        CF_JUMP
+244 branch_goto                  br.goto                  CF_USE1|CF_JUMP|CF_STOP

@@ -1,0 +1,216 @@
+{
+ "fixture": "wasmhex_fixed_memory_scalar.wasm",
+ "wall_ms": 425,
+ "timeout": false,
+ "functions": {
+  "init": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_f32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_f64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i32_8s": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i32_8u": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i32_16s": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i32_16u": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i64_8s": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i64_8u": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i64_16s": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i64_16u": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i64_32s": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_i64_32u": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_i32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_i64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 12,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_f32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_f64": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 12,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_i32_8": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_i32_16": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_i64_8": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 12,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_i64_16": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 12,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "store_i64_32": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 12,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "load_max_offset": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 25,
+  "ok": 25,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

@@ -1,0 +1,10 @@
+# Sparse dynamic return_call_indirect lowering (verify_wasmhex_return_call_indirect_dynamic_sparse.py).
+contains: return identity(a2);
+contains: return double(a2);
+contains: wasm_trap_call_indirect_null()
+contains: wasm_trap_call_indirect_type()
+contains: wasm_trap_call_indirect_bounds()
+contains: wasm_trap_call_indirect_bounds_table1_type0(a2, a1)
+not_contains: wasm_call_indirect_table
+not_contains: JUMPOUT(
+status: OK

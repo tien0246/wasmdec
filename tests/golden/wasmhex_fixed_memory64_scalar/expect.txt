@@ -1,0 +1,6 @@
+# Fixed Memory64 scalar read/write lowering (verify_wasmhex_fixed_memory64_scalar.py).
+contains: *(_QWORD *)a1
+not_contains: __builtin_trap
+not_contains: wasm_memory64_
+not_contains: JUMPOUT(
+status: OK

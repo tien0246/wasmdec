@@ -1,0 +1,32 @@
+{
+ "fixture": "dwarf_noname.wasm",
+ "wall_ms": 391,
+ "timeout": false,
+ "functions": {
+  "compute_distance": {
+   "status": "OK",
+   "ms": 11,
+   "lines": 20,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "scale_static": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 2,
+  "ok": 2,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

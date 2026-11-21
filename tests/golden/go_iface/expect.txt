@@ -1,0 +1,19 @@
+# G12 "iface" (todo §5 G12 / §3.10): sourced Go fixture —
+# tests/go/iface/main.go (go1.27.4). Pseudocode kỳ vọng + PASS/FAIL:
+# expected_notes.md.
+# Pins cấu trúc: lời gọi interface = call qua slot phương thức của itab
+# (load con trỏ hàm tại itab+22, receiver là data word); nil interface
+# check hiện runtime.sigpanic; cả hai method cụ thể (main.square.area,
+# main.circle.area) decompile đúng phép nhân receiver (giá trị double);
+# main dựng {type word, data} rồi gọi main.areaOf trực tiếp. PC_F protocol
+# của call_indirect đã được hạ (không còn dư vết protocol).
+contains: __usercall main.areaOf(int a1@<r0>)
+contains: runtime.sigpanic
+contains: &byte_2[(unsigned int)v2 + 22]
+contains: __usercall main.square.area@<r0>
+contains: __usercall main.circle.area@<r0>
+not_contains: runtime.morestack
+not_contains: switch (a1)
+not_contains: JUMPOUT(
+not_contains: INTERR
+status: OK

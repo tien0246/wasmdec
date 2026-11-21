@@ -1,0 +1,8 @@
+# P5-1: when both name section and DWARF are present, name section wins
+# (fill-empty policy).
+contains: compute_distance
+contains: scale_static
+contains: _stack_pointer
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

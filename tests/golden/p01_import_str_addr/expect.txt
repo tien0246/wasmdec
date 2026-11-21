@@ -1,0 +1,9 @@
+# P0-1: a string address passed to an import renders as the plain linear
+# offset (16), never as a data-segment memory read and never as a .text
+# label.
+contains: print(16)
+not_contains: word_
+not_contains: unk_1000
+not_contains: loc_
+not_contains: JUMPOUT(
+status: OK

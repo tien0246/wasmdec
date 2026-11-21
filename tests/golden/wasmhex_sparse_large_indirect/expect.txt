@@ -1,0 +1,8 @@
+# Sparse large indirect dispatch lowering (verify_wasmhex_sparse_large_indirect.py).
+contains: return identity(a2);
+contains: return last(a2);
+contains: wasm_trap_call_indirect_null()
+contains: wasm_trap_call_indirect_type()
+contains: wasm_trap_call_indirect_bounds()
+not_contains: JUMPOUT(
+status: OK

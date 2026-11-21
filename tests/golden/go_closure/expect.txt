@@ -1,0 +1,18 @@
+# G12 "closure" (todo §5 G12 / §3.10): sourced Go fixture —
+# tests/go/closure/main.go (go1.27.4). Pseudocode kỳ vọng + PASS/FAIL:
+# expected_notes.md.
+# Pins cấu trúc: main.adder cấp phát closure object (runtime small-object
+# allocator go1.27), ghi funcval + biến bắt n vào capture field, trả closure
+# qua ô kết quả; thân closure là hàm riêng main.adder.func1 đọc biến bắt
+# qua thanh ghi context (wasm_global_1); call site: load funcval, nil
+# check (runtime.sigpanic), set context rồi gọi gián tiếp.
+contains: __usercall main.adder@<r0>(int a1@<r0>)
+contains: mallocgc
+contains: __usercall main.adder.func1@<r0>(int a1@<r0>)
+contains: wasm_global_1
+contains: runtime.sigpanic
+not_contains: runtime.morestack
+not_contains: switch (a1)
+not_contains: JUMPOUT(
+not_contains: INTERR
+status: OK

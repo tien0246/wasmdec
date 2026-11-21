@@ -1,0 +1,3 @@
+# T0-era refused-marker: functions below currently FAIL F5; their .c files are intentionally absent (no stale copies).
+# dumped: 2026-11-20T23:58:52
+MODULE	REJECTED	wasmhex: module rejected [code=48 class=policy_subset]

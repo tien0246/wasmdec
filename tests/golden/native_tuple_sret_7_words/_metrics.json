@@ -1,0 +1,40 @@
+{
+ "fixture": "native_tuple_sret_7_words.wasm",
+ "wall_ms": 424,
+ "timeout": false,
+ "functions": {
+  "make_quad": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "forward_quad": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 19,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "sum_quad": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 21,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 3,
+  "ok": 3,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

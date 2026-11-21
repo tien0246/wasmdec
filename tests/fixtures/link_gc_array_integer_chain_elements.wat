@@ -1,0 +1,15 @@
+;; WABT 1.0.42 cannot assemble GC constructors in element initializers; paired binary carries fixed-width type relocations.
+(module
+  (type $i32arr (array i32))
+  (type $i64arr (array i64))
+  (table 2 (ref null $i32arr))
+  (table 2 (ref null $i64arr))
+  (elem (table 0) (i32.const 0) (ref null $i32arr)
+    (array.new $i32arr (i32.mul (i32.add (i32.const 40) (i32.const 2)) (i32.const 3)) (i32.const 1)))
+  (elem (table 1) (i32.const 0) (ref null $i64arr)
+    (array.new $i64arr (i64.mul (i64.add (i64.const 40) (i64.const 2)) (i64.const 3)) (i32.const 1)))
+  (elem (table 0) (i32.const 1) (ref null $i32arr)
+    (array.new_fixed $i32arr 1 (i32.mul (i32.add (i32.const 40) (i32.const 2)) (i32.const 3))))
+  (elem (table 1) (i32.const 1) (ref null $i64arr)
+    (array.new_fixed $i64arr 1 (i64.mul (i64.add (i64.const 40) (i64.const 2)) (i64.const 3))))
+)

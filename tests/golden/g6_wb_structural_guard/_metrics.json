@@ -1,0 +1,64 @@
+{
+ "fixture": "g6_wb_structural_guard.wasm",
+ "wall_ms": 431,
+ "timeout": false,
+ "functions": {
+  "wasm_func_1": {
+   "status": "OK",
+   "ms": 4,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_func_2": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wasm_func_3": {
+   "status": "INTERR",
+   "ms": 0,
+   "lines": 0,
+   "stack": 0,
+   "jumpout": false,
+   "detail": "code=-31 errea=0x100000072"
+  },
+  "wasm_func_4": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 6,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wb_struct_collapsed": {
+   "status": "OK",
+   "ms": 4,
+   "lines": 30,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "wb_struct_loop_near_miss": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 30,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 6,
+  "ok": 5,
+  "interr": 1,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 1
+ }
+}

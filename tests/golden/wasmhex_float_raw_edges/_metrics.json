@@ -1,0 +1,288 @@
+{
+ "fixture": "wasmhex_float_raw_edges.wasm",
+ "wall_ms": 418,
+ "timeout": false,
+ "functions": {
+  "f32_add_bits": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f32_sub_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f32_mul_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f32_div_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_add_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_sub_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_mul_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_div_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f32_from_i32_s_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f32_from_i32_u_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f32_from_i64_s_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f32_from_i64_u_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_from_i32_s_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_from_i32_u_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_from_i64_s_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_from_i64_u_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f32_demote_f64_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 12,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "f64_promote_f32_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_trunc_f32_s_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_trunc_f32_u_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_trunc_f64_s_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_trunc_f64_u_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_trunc_f32_s_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_trunc_f32_u_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_trunc_f64_s_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_trunc_f64_u_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_sat_f32_s_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_sat_f32_u_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_sat_f64_s_bits": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_sat_f64_u_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 11,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_sat_f32_s_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_sat_f32_u_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_sat_f64_s_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_sat_f64_u_bits": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 18,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 34,
+  "ok": 34,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

@@ -1,0 +1,8 @@
+# Loop transfer lowering (verify_wasmhex_loop_transfers_autorev.py).
+contains: early_continue
+contains: nested_block_continue
+contains: nested_else_branch
+contains: outer_continue_from_inner
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

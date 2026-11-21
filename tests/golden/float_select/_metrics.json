@@ -1,0 +1,24 @@
+{
+ "fixture": "float_select.wasm",
+ "wall_ms": 356,
+ "timeout": false,
+ "functions": {
+  "test": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 8,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 1,
+  "ok": 1,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

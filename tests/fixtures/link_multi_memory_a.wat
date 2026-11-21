@@ -1,0 +1,11 @@
+(module
+  (import "env" "a" (memory $a 1))
+  (import "env" "b" (memory $b 1))
+  (memory $c 1)
+  (data (memory $c) (i32.const 0) "\33\00\00\00")
+  (func $read_a (export "read_a") (result i32) (i32.load (i32.const 0)))
+  (func $read_b (export "read_b") (result i32) (i32.load (memory $b) (i32.const 0)))
+  (func $read_c (export "read_c") (result i32) (i32.load (memory $c) (i32.const 0)))
+  (export "memory_a" (memory $a))
+  (export "memory_b" (memory $b))
+  (export "memory_c" (memory $c)))

@@ -1,0 +1,10 @@
+# P5-1: DWARF-derived function names, parameter names, and data segment names
+# when the Wasm name section is absent.
+contains: compute_distance
+contains: scale_static
+contains: int a@<r0>, int b@<r1>
+contains: int factor@<r0>, int base@<r1>
+contains: origin
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

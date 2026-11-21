@@ -1,0 +1,5 @@
+# T0-era refused-marker: functions below currently FAIL F5; their .c files are intentionally absent (no stale copies).
+# dumped: 2026-11-20T23:57:52
+null_traps	INTERR	code=-31 errea=0x1010
+signed	INTERR	code=-31 errea=0x1000
+unsigned	INTERR	code=-31 errea=0x1009

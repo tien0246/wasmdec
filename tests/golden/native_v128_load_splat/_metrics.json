@@ -1,0 +1,48 @@
+{
+ "fixture": "native_v128_load_splat.wasm",
+ "wall_ms": 401,
+ "timeout": false,
+ "functions": {
+  "copy_load8_splat": {
+   "status": "OK",
+   "ms": 8,
+   "lines": 16,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "copy_load16_splat": {
+   "status": "OK",
+   "ms": 3,
+   "lines": 12,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "copy_load32_splat": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 10,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "copy_load64_splat": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 9,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 4,
+  "ok": 4,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}

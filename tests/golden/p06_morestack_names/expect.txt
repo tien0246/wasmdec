@@ -1,0 +1,12 @@
+# G10/P0-6: the Go stack-guard prologue hides ONLY when the Go IR proved
+# the exact compiler sequence around a call the pclntab named
+# runtime.morestack(.noctxt); an identical body calling runtime.mini
+# never hides (no proof, no deletion).
+contains: return 42;
+contains: runtime.mini(0);
+contains: 4660
+contains: return 7;
+not_contains: runtime.morestack(0);
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

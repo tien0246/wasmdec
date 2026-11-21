@@ -1,0 +1,54 @@
+# wasmhex C++ style. Mirrors the existing IDA-SDK flavour of the code base:
+# Allman braces, 2-space indent, `if ( cond )` with spaces inside control
+# parentheses, operators leading continuation lines. Formatting must stay
+# whitespace-only: options that rewrite tokens are disabled on purpose.
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c++17
+ColumnLimit: 100
+IndentWidth: 2
+ContinuationIndentWidth: 2
+TabWidth: 2
+UseTab: Never
+BreakBeforeBraces: Allman
+AccessModifierOffset: -2
+IndentCaseLabels: true
+NamespaceIndentation: None
+SpaceBeforeParens: ControlStatements
+SpacesInParens: Custom
+SpacesInParensOptions:
+  InConditionalStatements: true
+  InCStyleCasts: false
+  InEmptyParentheses: false
+  Other: false
+PointerAlignment: Right
+ReferenceAlignment: Right
+BreakBeforeBinaryOperators: All
+AlignAfterOpenBracket: Align
+AlignOperands: DontAlign
+Cpp11BracedListStyle: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortLambdasOnASingleLine: Inline
+BreakTemplateDeclarations: Yes
+MaxEmptyLinesToKeep: 1
+KeepEmptyLines:
+  AtStartOfFile: false
+  AtStartOfBlock: false
+  AtEndOfFile: false
+# Token-preserving guarantees (do not enable without a semantic review):
+SortIncludes: Never
+IncludeBlocks: Preserve
+ReflowComments: false
+FixNamespaceComments: false
+InsertBraces: false
+RemoveBracesLLVM: false
+RemoveParentheses: Leave
+RemoveSemicolon: false
+QualifierAlignment: Leave
+InsertNewlineAtEOF: true
+BreakStringLiterals: false
+SortUsingDeclarations: Never

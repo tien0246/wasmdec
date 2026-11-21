@@ -1,0 +1,8 @@
+# S7: Go call with one f32 argument renders it as a float argument inside the
+# call.
+contains: wasm_func_3
+contains: 1.5
+contains: return 6;
+not_contains: JUMPOUT(
+not_contains: STACK[
+status: OK

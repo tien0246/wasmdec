@@ -1,0 +1,12 @@
+// wasmdec: bounds=hidden
+__int64 __usercall store_i64_32@<r0:r1>(int a1@<r0>, __int64 a2@<r1:r2>)
+{
+  int v4; // kr18_4
+  __int64 result; // eax:ecx
+
+  *(_DWORD *)((unsigned int)a1 + 0x100LL) = a2;
+  v4 = *(_DWORD *)((unsigned int)a1 + 0x100LL);
+  HIDWORD(result) = 0;
+  LODWORD(result) = v4;
+  return result;
+}

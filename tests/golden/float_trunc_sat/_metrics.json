@@ -1,0 +1,80 @@
+{
+ "fixture": "float_trunc_sat.wasm",
+ "wall_ms": 381,
+ "timeout": false,
+ "functions": {
+  "i32_sat_f32_s": {
+   "status": "OK",
+   "ms": 2,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_sat_f32_u": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_sat_f64_s": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i32_sat_f64_u": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 5,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_sat_f32_s": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_sat_f32_u": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_sat_f64_s": {
+   "status": "OK",
+   "ms": 0,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  },
+  "i64_sat_f64_u": {
+   "status": "OK",
+   "ms": 1,
+   "lines": 14,
+   "stack": 0,
+   "jumpout": false,
+   "detail": ""
+  }
+ },
+ "totals": {
+  "functions": 8,
+  "ok": 8,
+  "interr": 0,
+  "exc": 0,
+  "verify": 0,
+  "jumpout": 0,
+  "unsupported_msgs": 0
+ }
+}
